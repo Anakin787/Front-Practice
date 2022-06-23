@@ -1,10 +1,7 @@
-.profile {
-width: 100px;
-display: block;
-margin-left: auto;
-margin-right: auto;
-}
+/* Cascading Style Sheet */
+/* CSS Selector => Class , Id , Tag */
 
+/* 클래스만들기 */
 .header {
     font-size: 16px;
      color: blue;
@@ -12,8 +9,41 @@ margin-right: auto;
      text-align: center;
 }
 
+/* 모든 태그(Tag)에 대해서 이 스타일  */
 p {
     text-align: center;
     font-weight: 700;
     margin-top: 30px;
+}
+
+/* id만들기 */
+#special {
+    color: rebeccapurple;
+}
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+.profile {
+    width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }  
+
+.content {
+    text-align: center;
+}
+
+.box {
+    width: 300px;
+    background-color: rgb(55, 43, 168);
+    margin: 10px;
+    padding-bottom: 10px;
+    border: 2px solid black;
+    border-radius: 15px;
+    /* display: block; 생략가능 <div>,<p>,<h> 기본 내제 */
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+    color: white;
+    /* x(+,-) ,y(+,-) , blur , blur-spread , color */
+    box-shadow: 1px 1px 10px 5px darkorchid;
 }
