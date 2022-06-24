@@ -1,26 +1,15 @@
 /* Cascading Style Sheet */
-/* CSS Selector => Class , Id , Tag */
+/* CSS Selector => Class(.name) , Id(#name) , Tag(Tagname) */
 
 /* 클래스만들기 */
-.header {
+
+.header { 
     font-size: 16px;
      color: blue;
      letter-spacing: 2px;
      text-align: center;
 }
 
-/* 모든 태그(Tag)에 대해서 이 스타일  */
-p {
-    text-align: center;
-    font-weight: 700;
-    margin-top: 30px;
-}
-
-/* id만들기 */
-#special {
-    color: rebeccapurple;
-}
-/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 .profile {
     width: 100px;
     display: block;
@@ -46,4 +35,53 @@ p {
     color: white;
     /* x(+,-) ,y(+,-) , blur , blur-spread , color */
     box-shadow: 1px 1px 10px 5px darkorchid;
+}
+
+.container {
+    width: 1000px;
+}
+
+.left-menu {
+    width: 70%;
+    height: 200px;
+    background-color: white;
+    float: left;
+}
+.left-top {
+    width: 10%;
+    height: 50px;
+    float: left;
+}
+.right-top1 {
+    width: 90%;
+    height: 10px;
+    float: left;
+}
+.right-top2 {
+    width: 90%;
+    height: 25px;
+    font-size: 10px;
+    float: left;
+}
+
+.middle {
+    width: auto;
+    height: auto;
+    padding-left: 5px;
+    float: left;
+}
+
+.bottom {
+    width: auto;
+    height: 100px;
+    padding: 5px;
+    float: left;
+}
+
+.right-menu {
+    width: 30%;
+    height: 200px;
+    background-color:coral ;
+    float: left;
+    /* vertical-align(상하정렬) (inline 또는 inline-block속성에만 사용가능 */
 }
