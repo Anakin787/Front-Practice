@@ -37,8 +37,12 @@
     box-shadow: 1px 1px 10px 5px darkorchid;
 }
 
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
 .container {
     width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .left-menu {
@@ -84,4 +88,23 @@
     background-color:coral ;
     float: left;
     /* vertical-align(상하정렬) (inline 또는 inline-block속성에만 사용가능 */
+}
+
+
+/* selector문법 : 공백-모든자식 , '>'-직계자식  */
+.navbar {
+    list-style-type: none;
+    /* text-align: center; */
+    position: relative;
+    left: 350px;
+}
+.navbar li{
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
 }
