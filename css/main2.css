@@ -1,0 +1,38 @@
+.main-back {
+    width: 100%;
+    height: 500px;
+    background-image: url(../img/shoes.jpg);
+    /* cover : 짤려도되니 div박스채워라
+       container : div박스 다안채워도되니 짜르지마라. */
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(80%); /* 글씨에도 필터적용됌 주의 */
+    padding: 1px;
+
+}
+.main-title {
+    color: white;
+    font-size: 40px;
+    /* margin collapse(박스의 테두리가 겹칠때)현상 염두 */
+    margin-top: 100px;
+    text-align: center;
+}
+
+.content {
+    color: white;
+    text-align: center;
+}
+
+.btn{
+    border: 2px solid purple;
+    border-radius: 20px; 
+    width: 200px;
+    height: 75px;
+    font-size: 25px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    left: 44%;
+    top: 10%;
+}
