@@ -19,12 +19,13 @@
     text-align: center;
 }
 
-.content {
+.main-content {
     color: white;
     text-align: center;
+    font-size: 18px;
 }
 
-.btn{
+.main-btn {
     border: 2px solid purple;
     border-radius: 20px; 
     width: 200px;
@@ -32,7 +33,24 @@
     font-size: 25px;
     font-weight: 700;
     font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    margin: auto;
     position: relative;
-    left: 44%;
-    top: 10%;
+    top: 50px;
+}
+
+.sub-back {
+    width: 700px;
+    height: 200px;
+    background-color: gray;
+    opacity: 0.9;
+    margin: auto;
+    position: relative;
+    bottom: 65px;
+    border: 2px solid darkorchid;
+    border-radius: 15px;
+}
+.sub-content {
+    font-size: 18px;
+    text-align: center;
 }
