@@ -1,3 +1,9 @@
+div{
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+}
 .main-back {
     width: 100%;
     height: 500px;
@@ -39,8 +45,11 @@
     top: 50px;
 }
 
+/* 반응형 웹을 쓸때 '%'를 자주씀 */
+/* PC에서는 너무커지니까 max-width를 사용하여 최대폭 설정 */
 .sub-back {
-    width: 700px;
+    width: 80%;
+    max-width: 800px;
     height: 200px;
     background-color: gray;
     opacity: 0.9;
@@ -49,6 +58,10 @@
     bottom: 65px;
     border: 2px solid darkorchid;
     border-radius: 15px;
+    /* z-index : '떠있는'개체 중 누가 위로오게하는지 정하는 것.높을수록 우선. */
+    z-index: 5;
+    /* padding, margin 값 포함하는 사이즈. */
+    box-sizing: border-box;
 }
 .sub-content {
     font-size: 18px;
