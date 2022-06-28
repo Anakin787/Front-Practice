@@ -1,34 +1,52 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Document_1</title>
-        <link href="/css/main.css" rel="stylesheet">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>Document_1</title>
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/normalize.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main-back">
+        <h4 class="main-title">Buy Our Shoes</h4>
+        <p class="main-content">안녕하세요 아이버 BCD마켓 팀입니다.
+            저희 아이버 BCD마켓의 신발을 구매하시고자하면 아래버튼을 클릭하여 주세요.<br>
+            저희 브랜드를 이용해주시는 고객님들께 항상 감사의 인사 드립니다</p>
+        <button class="main-btn">Buy Now</button>
+    </div>
+    <div class="sub-back">
+        <h4 style="font-size: 26px; text-align: center;">How we design our Shoes</h4>
+            <p class="sub-content">
+                This is sample Text. This is sample Text. This is sample Text. This is sample Text.
+                This is sample Text. This is sample Text. This is sample Text. This is sample Text.
+                This is sample Text. This is sample Text.</p>
+    </div>
 
-        <!-- <nav>, <section>, <footer>등 은<div>와 기능은 같지만 의미구분위해 쓴다. -->
-        <nav class="navbar">
-            <ul class="navbar">
-                <li><a href="#">영화</a></li>
-                <li><a href="#">맛집</a></li>      
-                <li><a href="#">컴퓨터</a></li>
-                <li><a href="#">블로그</a></li>
-            </ul>
-        </nav>
-
-        <div class="container">
-            <div class="left-menu">
-                <div><img src="/img/icon.jpg" class="left-top"></div>
-                <div><strong class="right-top1">정지운</strong></div>
-                <div><p class="right-top2">1시간 전</p></div>
-                <div><strong class="middle">4K빔프로젝터 가성비 최강으로 선택했어요</strong></div>
-                <div>
-                    <p class="bottom">4k빔프로젝터 가성비최강으로 선택했어요. 날씨가날씨인지라 요즘 마음이 싱숭행숭한게 가을타는 사람이 아닌 봄을 타고있었어요... 하루하루 시간이 무의미하게 흘러가는거같고 재미있는걸 찾지못해 이리저리 헤메는 사람처럼 즐거운걸 못찾고있었는데 이걸 발견해서 너무 잘쓰고 있어요.</p>
+    <div class="back-black">
+        <div class="back-white">
+            <form>
+                <div class="w-100">
+                    <h3>contact us</h3>
+                    <p>your email</p>
+                    <input class="form-input" type="email" placeholder="email@example.com">
                 </div>
-
-            </div>
-            <div ><img src="/img/beam.jpg" class="right-menu";></div>
+                <div class="w-50">
+                    <p>First Name</p>
+                    <input class="form-input" type="text">
+                </div>
+                <div class="w-50">
+                    <p>Last Name</p>
+                    <input class="form-input" type="text">
+                </div>
+                <div style="clear:both"></div>
+                <div class="w-100">
+                    <p><label for="msg">Message</label></p>
+                    <textarea id="msg" class="form-input"></textarea>
+                </div>
+                <div class="w-100">
+                    <input id="sub" type="checkbox"> <label for="sub">Subscribe</label>
+                    <button class="btn">SEND</button>
+                </div>
+            </form>
         </div>
-    </body>
-</html>
+    </div>
+</body>

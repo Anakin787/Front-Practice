@@ -1,5 +1,14 @@
 /* Cascading Style Sheet */
 /* CSS Selector => Class(.name) , Id(#name) , Tag(Tagname) */
+div{
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+}
+div,input,textarea{
+    box-sizing: border-box;
+}
 
 /* 클래스만들기 */
 
@@ -36,76 +45,108 @@
     /* x(+,-) ,y(+,-) , blur , blur-spread , color */
     box-shadow: 1px 1px 10px 5px darkorchid;
 }
-
-/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
-
-.container {
-    width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.left-menu {
-    width: 70%;
-    height: 200px;
-    background-color: white;
-    float: left;
-}
-.left-top {
-    width: 10%;
-    height: 50px;
-    float: left;
-}
-.right-top1 {
-    width: 90%;
-    height: 10px;
-    float: left;
-}
-.right-top2 {
-    width: 90%;
-    height: 25px;
-    font-size: 10px;
-    float: left;
-}
-
-.middle {
-    width: auto;
-    height: auto;
-    padding-left: 5px;
-    float: left;
-}
-
-.bottom {
-    width: auto;
-    height: 100px;
-    padding: 5px;
-    float: left;
-}
-
-.right-menu {
-    width: 30%;
-    height: 200px;
-    background-color:coral ;
-    float: left;
-    /* vertical-align(상하정렬) (inline 또는 inline-block속성에만 사용가능 */
-}
-
-
+/* vertical-align(상하정렬) (inline 또는 inline-block속성에만 사용가능 */
 /* selector문법 : 공백-모든자식 , '>'-직계자식  */
-.navbar {
-    list-style-type: none;
-    /* text-align: center; */
-    position: relative;
-    left: 350px;
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+.main-back {
+    width: 100%;
+    height: 500px;
+    background-image: url(../img/shoes.jpg);
+    /* cover : 짤려도되니 div박스채워라
+       container : div박스 다안채워도되니 짜르지마라. */
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(80%); /* 글씨에도 필터적용됌 주의 */
+    padding: 1px;
+
 }
-.navbar li{
-    display: inline-block;
-    width: 60px;
+.main-title {
+    color: white;
+    font-size: 40px;
+    /* margin collapse(박스의 테두리가 겹칠때)현상 염두 */
+    margin-top: 100px;
     text-align: center;
-    background-color: #eee;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    text-decoration: none;
 }
 
+.main-content {
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+
+.main-btn {
+    border: 2px solid purple;
+    border-radius: 20px; 
+    width: 200px;
+    height: 75px;
+    font-size: 25px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 50px;
+}
+
+/* 반응형 웹을 쓸때 '%'를 자주씀 */
+/* PC에서는 너무커지니까 max-width를 사용하여 최대폭 설정 */
+.sub-back {
+    width: 80%;
+    max-width: 800px;
+    height: 200px;
+    background-color: gray;
+    opacity: 0.9;
+    margin: auto;
+    position: relative;
+    bottom: 65px;
+    border: 2px solid darkorchid;
+    border-radius: 15px;
+    /* z-index : '떠있는'개체 중 누가 위로오게하는지 정하는 것.높을수록 우선. */
+    z-index: 5;
+    /* padding, margin 값 포함하는 사이즈. */
+    box-sizing: border-box;
+}
+.sub-content {
+    font-size: 18px;
+    text-align: center;
+}
+
+.back-black {
+    background-color: black;
+    padding: 30px;
+}
+.back-white{
+    background-color: white;
+    padding: 30px;
+    width:80% ;
+    max-width: 600px;
+    margin: auto;
+}
+.form-input{
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.w-100{
+    padding: 10px;
+}
+.w-50{
+    width: 50%;
+    float: left;
+    padding: 10px;
+}
+.btn{
+    background-color: orange;
+    border: 1px none;
+    border-radius: 5px;
+    width: 30%;
+    height: 40px;
+    font-size: 20px;
+    float: right;
+    color: white;
+}
