@@ -38,8 +38,13 @@ img{
     width: 500px;
     border-radius: 10px;
 }
-.line {
+.table tr {
     border-bottom: 1px solid blueviolet;
+}
+/* '.클래스명'에 있는 n번째 '적용할클래스명'에 적용  */
+/* '.클래스명' '적용할클래스명':nth-child(n) */
+.table td:nth-child(1){
+    width: 300px;
 }
 .r2r3_h4 {
     font-size: 14px;

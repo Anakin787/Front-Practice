@@ -8,16 +8,17 @@
     <div class="outer-box">
         <h1 class="move_txt">Your shopping cart</h1>
         <div class="table">
+            <!-- 테이블에서 첫 행의 폭과 '열 수' 등은 다음행에도 그대로 적용된다. -->
             <table>
                 <!-- vertical-align 용도2 : table안에서 세로정렬할때(top/middle/bottom만 가능) -->    
                 <tr class="line">
-                    <td style : width: 300px;>Item</td>
+                    <td>Item</td>
                     <td>Amount</td>
                     <td>Price</td>
                     <td>Total</td>
                 </tr>
                 <tr class="line" style="height: 50px;">
-                    <td style : width: 300px;>
+                    <td>
                         <img src="/img/camera.jpg">
                         <div style="float: left; width: 150px; ">
                             <h4 class="r2r3_h4">Sony</h4>
@@ -29,7 +30,7 @@
                     <td>1979.00$</td>
                 </tr>
                 <tr class="line" style="height: 50px;">
-                    <td style : width: 300px;>
+                    <td>
                         <img src="/img/camera.jpg">
                         <div style="float: left; width: 150px; ">
                             <h4 class="r2r3_h4">Sony</h4>
@@ -40,11 +41,8 @@
                     <td>989.00$</td>
                     <td>989.00$</td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><p>2968.00$</p></td>
+                <tr> <!-- colspan : 가로열 합치기 -->
+                    <td colspan="4"style="text-align:right">2968.00$</td>
                 </tr>
             </table>
         </div>
