@@ -4,13 +4,7 @@ div{
 body{
     margin: 0px;
 }
-div,input,textarea{
-    box-sizing: border-box;
-}
 /* table은 기본적으로 틈이존재 */
-table{
-    border-collapse: collapse;
-}
 /* display:inline : 항상 옆으로 채워지는 폭과 너비가 없는 요소 */
 
 table, tr, td{
@@ -36,13 +30,12 @@ img{
     margin: auto;
     border-radius: 5px;
     width: 500px;
-    border-radius: 10px;
 }
-.table tr {
+.line {
     border-bottom: 1px solid blueviolet;
 }
-/* '.클래스명'에 있는 n번째 '적용할클래스명'에 적용  */
 /* '.클래스명' '적용할클래스명':nth-child(n) */
+/* '.클래스명'에 있는 n번째 '적용할클래스명'에 적용  */
 .table td:nth-child(1){
     width: 300px;
 }
@@ -66,8 +59,23 @@ img{
     font-size: small;
     position: relative;
     right: 100px;
-    top: 20px
+    top: 20px;
+    text-decoration: none;
+    cursor:pointer;
 }
+/* 순서 중요 hofa로 외우자 */
+/* 버튼 반응 - 위에있을때 누를때 눌렀을때 */
+.btn:hover{
+    background-color: chocolate;
+}
+.btn:focus{
+    background-color: grey;
+}
+.btn:active{
+    background-color: brown;
+    border: 2px solid brown;
+}
+
 .move_txt{
     position: relative;
     left: 100px;

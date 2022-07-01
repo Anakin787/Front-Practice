@@ -1,8 +1,5 @@
 /* Cascading Style Sheet */
 /* CSS Selector => Class(.name) , Id(#name) , Tag(Tagname) */
-div{
-    box-sizing: border-box;
-}
 body{
     margin: 0px;
 }
