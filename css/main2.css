@@ -1,8 +1,26 @@
+/* 준비한 폰트파일을 CSS에서 사용가능하게 등록하는 과정 */
+/* 용량 줄이려면 woff파일 쓰자 */
+@font-face{
+    font-family: '이쁜폰트';
+    src: url(../font/NanumSquareR.woff);
+}
+/* 굵은폰트 따로 등록해서 쓰자 */
+@font-face{
+    font-family: '굵은폰트';
+    font-weight: 800;
+    src: url(../font/NanumSquareB.woff);
+}
+/* 윈도우전용 안티-앨리언싱 */
+p,h4,h1,a,span,tr,td{
+    transform: rotate(0.03deg);
+}
+
 div{
     box-sizing: border-box;
 }
 body{
     margin: 0px;
+    font-family: '이쁜폰트';
 }
 /* table은 기본적으로 틈이존재 */
 /* display:inline : 항상 옆으로 채워지는 폭과 너비가 없는 요소 */

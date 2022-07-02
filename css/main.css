@@ -147,3 +147,19 @@ div,input,textarea{
     float: right;
     color: white;
 }
+/* 가로정렬 다른방법 - flex : 정렬할 요소의 부모클래스에 적용 */
+/* 나중에 반응형으로 디자인할 때도 유용 */
+.flex-container{
+    display: flex;
+    align-items: center; /*상하정렬*/
+    height: 50px;
+    padding: 5px;
+    background-color: orange;
+
+}
+
+.nav-item {
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+}
