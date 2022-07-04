@@ -177,3 +177,37 @@ textarea {
     font-size: 20px;
     margin-right: 10px;
 }
+
+/*  medea quary class를 밑에 하나 더 추가해준다라고 
+이해하는게 정확. 권장 Breakpoint : 1200px,768px  */
+@media screen and (max-width :1200px) {
+    .main-title {
+        font-size: 30px;
+    }
+    .main-content{
+        font-size: 1rem;
+    }
+    .main-btn{
+        font-size: 23px;
+        width: 175px;
+        height: 60px;
+    }
+}
+
+
+@media screen and (max-width :768px) {
+    .main-title {
+        font-size: 25px;
+    }
+    .main-content{
+        font-size: 0.8rem;
+    }
+    .main-btn{
+        font-size: 20px;
+        width: 160px;
+        height: 50px;
+    }
+    .sub-content{
+        font-size: 1rem;
+    }
+}
