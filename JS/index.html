@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/JS/main.css">
+</head>
+<body>
+    <div id="alt" class="alt-box">
+        <button class="btn" onclick="알림창닫기()">X</button>알림창입니다
+    </div>
+    <button style="margin: 5px;" onclick="알림창열기()">알림창열기</button>
+
+    <script>
+        function 알림창열기(){
+            document.getElementById('alt').style.display='block';
+        }
+        function 알림창닫기(){
+            document.getElementById('alt').style.display='none';
+        }
+    </script>
+    
+</body>
+</html>

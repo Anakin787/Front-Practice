@@ -1,0 +1,14 @@
+.alt-box{
+    background-color: skyblue;
+    padding: 20px;
+    color: white;
+    border-radius: 3px;
+    display: none;
+}
+.btn{
+    border: none;
+    float: right;
+    background-color: skyblue;
+    font-size: 20px;
+    font-weight: 500;
+}
