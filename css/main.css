@@ -1,19 +1,22 @@
 /* Cascading Style Sheet */
 /* CSS Selector => Class(.name) , Id(#name) , Tag(Tagname) */
-body{
+body {
     margin: 0px;
 }
-div,input,textarea{
+
+div,
+input,
+textarea {
     box-sizing: border-box;
 }
 
 /* 클래스만들기 */
 
-.header { 
+.header {
     font-size: 16px;
-     color: blue;
-     letter-spacing: 2px;
-     text-align: center;
+    color: blue;
+    letter-spacing: 2px;
+    text-align: center;
 }
 
 .profile {
@@ -21,7 +24,7 @@ div,input,textarea{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    }  
+}
 
 .content {
     text-align: center;
@@ -42,6 +45,7 @@ div,input,textarea{
     /* x(+,-) ,y(+,-) , blur , blur-spread , color */
     box-shadow: 1px 1px 10px 5px darkorchid;
 }
+
 /* vertical-align(상하정렬) (inline 또는 inline-block속성에만 사용가능 */
 /* selector문법 : 공백-모든자식 , '>'-직계자식  */
 
@@ -53,13 +57,15 @@ div,input,textarea{
     background-image: url(../img/shoes.jpg);
     /* cover : 짤려도되니 div박스채워라
        container : div박스 다안채워도되니 짜르지마라. */
-    background-size: cover; 
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    filter: brightness(80%); /* 글씨에도 필터적용됌 주의 */
+    filter: brightness(80%);
+    /* 글씨에도 필터적용됌 주의 */
     padding: 1px;
 
 }
+
 .main-title {
     color: white;
     font-size: 40px;
@@ -76,7 +82,7 @@ div,input,textarea{
 
 .main-btn {
     border: 2px solid purple;
-    border-radius: 20px; 
+    border-radius: 20px;
     width: 200px;
     height: 75px;
     font-size: 25px;
@@ -106,6 +112,7 @@ div,input,textarea{
     /* padding, margin 값 포함하는 사이즈. */
     box-sizing: border-box;
 }
+
 .sub-content {
     font-size: 18px;
     text-align: center;
@@ -115,29 +122,34 @@ div,input,textarea{
     background-color: black;
     padding: 30px;
 }
-.back-white{
+
+.back-white {
     background-color: white;
     padding: 30px;
-    width:80% ;
+    width: 80%;
     max-width: 600px;
     margin: auto;
 }
-.form-input{
+
+.form-input {
     width: 100%;
     padding: 10px;
     font-size: 20px;
     border: 2px solid black;
     border-radius: 5px;
 }
-.w-100{
+
+.w-100 {
     padding: 10px;
 }
-.w-50{
+
+.w-50 {
     width: 50%;
     float: left;
     padding: 10px;
 }
-.btn{
+
+.btn {
     background-color: orange;
     border: 1px none;
     border-radius: 5px;
@@ -147,11 +159,13 @@ div,input,textarea{
     float: right;
     color: white;
 }
+
 /* 가로정렬 다른방법 - flex : 정렬할 요소의 부모클래스에 적용 */
 /* 나중에 반응형으로 디자인할 때도 유용 */
-.flex-container{
+.flex-container {
     display: flex;
-    align-items: center; /*상하정렬*/
+    align-items: center;
+    /*상하정렬*/
     height: 50px;
     padding: 5px;
     background-color: orange;

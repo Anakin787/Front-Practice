@@ -1,76 +1,96 @@
 /* 준비한 폰트파일을 CSS에서 사용가능하게 등록하는 과정 */
 /* 용량 줄이려면 woff파일 쓰자 */
-@font-face{
+@font-face {
     font-family: '이쁜폰트';
     src: url(../font/NanumSquareR.woff);
 }
+
 /* 굵은폰트 따로 등록해서 쓰자 */
-@font-face{
+@font-face {
     font-family: '굵은폰트';
     font-weight: 800;
     src: url(../font/NanumSquareB.woff);
 }
+
 /* 윈도우전용 안티-앨리언싱 */
-p,h4,h1,a,span,tr,td{
+p,
+h4,
+h1,
+a,
+span,
+tr,
+td {
     transform: rotate(0.03deg);
 }
 
-div{
+div {
     box-sizing: border-box;
 }
-body{
+
+body {
     margin: 0px;
     font-family: '이쁜폰트';
 }
+
 /* table은 기본적으로 틈이존재 */
 /* display:inline : 항상 옆으로 채워지는 폭과 너비가 없는 요소 */
 
-table, tr, td{
-    border-collapse:collapse;
-    padding:5px;
-    text-align:center;
+table,
+tr,
+td {
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: center;
 }
-img{
+
+img {
     width: 20%;
     float: left;
 }
+
 .outer-box {
     background-color: aquamarine;
     width: 700px;
     height: 500px;
     margin: auto;
 }
+
 .table {
     background-color: white;
     color: blue;
     position: relative;
-    top:50px;
+    top: 50px;
     margin: auto;
     border-radius: 5px;
     width: 500px;
 }
+
 .line {
     border-bottom: 1px solid blueviolet;
 }
+
 /* '.클래스명' '적용할클래스명':nth-child(n) */
 /* '.클래스명'에 있는 n번째 '적용할클래스명'에 적용  */
-.table td:nth-child(1){
+.table td:nth-child(1) {
     width: 300px;
 }
+
 .r2r3_h4 {
     font-size: 14px;
     margin: 4px;
-    text-align: left; 
+    text-align: left;
 }
+
 .r2r3_p {
     font-size: 10px;
     margin: 4px;
     text-align: left;
 }
+
 .btn {
     text-decoration: underline;
     color: white;
-    float : right;
+    float: right;
     background-color: blue;
     padding: 10px;
     border-radius: 3px;
@@ -79,24 +99,26 @@ img{
     right: 100px;
     top: 20px;
     text-decoration: none;
-    cursor:pointer;
+    cursor: pointer;
 }
+
 /* 순서 중요 hofa로 외우자 */
 /* 버튼 반응 - 위에있을때 누를때 눌렀을때 */
-.btn:hover{
+.btn:hover {
     background-color: chocolate;
 }
-.btn:focus{
+
+.btn:focus {
     background-color: grey;
 }
-.btn:active{
+
+.btn:active {
     background-color: brown;
     border: 2px solid brown;
 }
 
-.move_txt{
+.move_txt {
     position: relative;
     left: 100px;
     top: 60px
 }
-
