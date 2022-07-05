@@ -1,0 +1,27 @@
+.container{
+    width: 80%;
+    max-width: 1000px;
+    margin: auto;
+}
+.container div{
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+/* and뒤에 띄어쓰기 필수!! */
+@media screen and (max-width:1200px) {
+    .container div{
+        float: left;
+        width: 50%;
+        max-width: 800px;
+    }
+    
+}
+
+@media screen and (max-width:768px) {
+    .container div{
+        width: 100%;
+        max-width: 600px;
+    }
+    
+}
