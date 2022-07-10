@@ -51,6 +51,24 @@ textarea {
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
+/* 가로정렬 다른방법 - flex : 정렬할 요소의 부모클래스에 적용 */
+/* 나중에 반응형으로 디자인할 때도 유용 */
+.flex-container {
+    display: flex;
+    align-items: center;
+    /*상하정렬*/
+    height: 50px;
+    padding: 5px;
+    background-color: orange;
+
+}
+
+.nav-item {
+    color: white;
+    font-size: 30px;
+    margin-right: 10px;
+}
+
 .main-back {
     width: 100%;
     height: 500px;
@@ -118,6 +136,30 @@ textarea {
     text-align: center;
 }
 
+
+.container {
+    width: 80%;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.container div {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+.container i{
+    background-color: burlywood;
+    width: 100px;
+    height: 100px;
+    padding-top: 25px;
+    box-sizing: border-box;
+    border-radius: 50px;
+}
+
+
 .back-black {
     background-color: black;
     padding: 30px;
@@ -160,38 +202,31 @@ textarea {
     color: white;
 }
 
-/* 가로정렬 다른방법 - flex : 정렬할 요소의 부모클래스에 적용 */
-/* 나중에 반응형으로 디자인할 때도 유용 */
-.flex-container {
-    display: flex;
-    align-items: center;
-    /*상하정렬*/
-    height: 50px;
-    padding: 5px;
-    background-color: orange;
-
-}
-
-.nav-item {
-    color: white;
-    font-size: 30px;
-    margin-right: 10px;
-}
-
 /*  medea quary class를 밑에 하나 더 추가해준다라고 
 이해하는게 정확. 권장 Breakpoint : 1200px,768px  */
+/* and뒤에 띄어쓰기 필수!! */
 @media screen and (max-width :1200px) {
     .main-title {
         font-size: 30px;
     }
-    .main-content{
+
+    .main-content {
         font-size: 1rem;
     }
-    .main-btn{
+
+    .main-btn {
         font-size: 23px;
         width: 175px;
         height: 60px;
     }
+
+    .container div {
+        width: 50%;
+    }
+    .container{
+        max-width: 800px;
+    }
+
 }
 
 
@@ -199,15 +234,23 @@ textarea {
     .main-title {
         font-size: 25px;
     }
-    .main-content{
+
+    .main-content {
         font-size: 0.8rem;
     }
-    .main-btn{
+
+    .main-btn {
         font-size: 20px;
         width: 160px;
         height: 50px;
     }
-    .sub-content{
+
+    .sub-content {
         font-size: 1rem;
+    }
+
+    .container div {
+        width: 100%;
+        max-width: 600px;
     }
 }

@@ -5,7 +5,10 @@
     <title>Document_1</title>
     <link href="/CSS/main.css" rel="stylesheet">
     <link href="/CSS/normalize.css" rel="stylesheet">
+    <!-- <link href="/CSS/all.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <meta name="viewpoint" content="width=divece-width, initial-scale=1.0">
+    <!--조건부주석 // 자세한내용은 Google-->
     <!--[if lte IE 9]>
         <link href="/CSS/ie9.css" type="text/css" rel="stylesheet">
     <![endif]-->
@@ -34,6 +37,32 @@
             This is sample Text. This is sample Text. This is sample Text. This is sample Text.
             This is sample Text. This is sample Text.</p>
     </div>
+
+    <!-- div여러개 만들때 컨테이너박스 만드는 습관. -->
+    <div class="container">
+        <div>
+            <i class="fa-solid fa-cart-shopping fa-3x"></i>
+            <h4>Fast Shipping</h4>
+            <p>lorem ipsum</p>
+        </div>
+        <div>
+            <i class="fa-solid fa-handshake fa-3x"></i>
+            <h4>Good Service</h4>
+            <p>lorem ipsum</p>
+        </div>
+        <div>
+            <i class="fa-brands fa-bitcoin fa-3x"></i>
+            <h4>Free Coupons</h4>
+            <p>lorem ipsum</p>
+        </div>
+        <div>
+            <i class="fa-solid fa-bag-shopping fa-3x"></i>
+            <h4>New Products</h4>
+            <p>lorem ipsum</p>
+        </div>
+        <div style="float: none; clear: both;"></div>
+    </div>
+
     <div class="back-black">
         <div class="back-white">
             <form>
