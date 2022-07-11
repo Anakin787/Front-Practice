@@ -7,16 +7,20 @@
 </head>
 <body>
     <div id="alt" class="alt-box">
-        <button class="btn" onclick="알림창닫기()">X</button>알림창입니다
+        <p id="title" style="float: left;" >알림창입니다</p>
+        <button id="close" class="btn">X</button>
     </div>
-    <button style="margin: 5px;" onclick="알림창열기()">알림창열기</button>
+
+    <button onclick="아이디알림창('block','아이디를입력하세요')">버튼1</button>
+    <button onclick="아이디알림창('block','비번을입력하세요')">버튼2</button>
 
     <script>
-        function 알림창열기(){
-            document.getElementById('alt').style.display='block';
-        }
-        function 알림창닫기(){
+        document.getElementById('close').addEventListener('click',function(){
             document.getElementById('alt').style.display='none';
+        });
+        function 아이디알림창(구멍,구멍2){
+            document.getElementById('alt').style.display=구멍;
+            document.getElementById('title').innerHTML=구멍2
         }
     </script>
     
