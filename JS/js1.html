@@ -33,9 +33,10 @@
         document.querySelector('.list-group')
         // querySelectorAll 동인한 모든요소 다 찾아줌. 인덱싱사용!!
         document.querySelectorAll('.list-group-item')[1]
-        
+
         document.getElementsByClassName('navbar-toggler')[0].addEventListener('click',function(){
-            document.getElementsByClassName('list-group')[0].classList.toggle('show');
+            document.getElementsByClassName('list-group')[0].classList.toggle('show'); 
+            //toggle은 뒤의 클래스가'없으면 붙이고' '있으면 떼는' 요소.
         })
     </script>
 

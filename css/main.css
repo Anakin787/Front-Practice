@@ -181,19 +181,21 @@ textarea {
     position: absolute;
     width: 100%;
     height: 100%;
+    /* 넘치는 속성은 안보이게 해줌 */
+    overflow: hidden;
 }
 .overlay{
-    position: absolute;
     width: 100%;
-    height: 50%;
-    top: 50%;
+    height: 100%;
+    margin-top: 100%;
     background: black;
     opacity:0;
     transition: all 1s;
     transition-duration: 0.5s;
 }
-.overlay-wrap:hover div{
-    opacity: 0.5; 
+.overlay-wrap:hover .overlay{
+    opacity: 0.5;
+    margin-top: 50%;
 }
 .overlay-font{
     font-size: 30px;
