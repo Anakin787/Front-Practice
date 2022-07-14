@@ -128,7 +128,7 @@ p,h4,h1,a,span,tr,td {
     width: 100%;
     height: 100%;
     z-index: 2;
-    transition: all 1s;
+    transition: all 0.5s;
 }
 .white-box:hover{
     border: 30px solid white;
@@ -148,14 +148,16 @@ p,h4,h1,a,span,tr,td {
 }
 .contact{
     width: 100%;
-    min-height: 200px;
-    margin: auto;
     padding-top: 20px;
+    display: flex;
+    /* float: left; */
+
 }
 .contact-box{
-    float: left;
-    width: 33%;
+    /* float: left; */
+    width: 10%;
     text-align: center;
+    margin: auto;
 }
 .contact i{
     width: 100px;
@@ -164,8 +166,8 @@ p,h4,h1,a,span,tr,td {
     box-sizing: border-box;
     color: white;
     background-color:blue;
-    padding-top: 20px;
-    
+    padding-top: 30px;
+    margin: auto;
 }
 
 
