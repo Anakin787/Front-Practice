@@ -1,4 +1,4 @@
-.alt-box{
+.alt-box {
     background-color: skyblue;
     padding: 10px;
     color: white;
@@ -7,18 +7,43 @@
     width: 100%;
     height: 50px;
 }
-.btn{
+
+.button {
     position: relative;
-    top:30%;
+    top: 30%;
     border: none;
     float: right;
     background-color: skyblue;
     font-size: 20px;
 }
 
-.list-group{
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+.black-bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    padding: 30px;
+    /* 애니메이션 만들때 display:none대용 */
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s;
+}
+.show-modal{
+    visibility: visible;
+    opacity: 1;
+}
+.white-bg {
+    background: white;
+    border-radius: 5px;
+    padding: 30px;
+}
+
+.list-group {
     display: none;
 }
-.show{
-    display:block;
+
+.show {
+    display: block;
 }

@@ -149,13 +149,14 @@ p,h4,h1,a,span,tr,td {
 .contact{
     width: 100%;
     padding-top: 20px;
-    display: flex;
-    /* float: left; */
+    padding-left: 30px;
+    padding-right: 30px;
+    
 
 }
 .contact-box{
-    /* float: left; */
-    width: 10%;
+    float: left;
+    width: 33%;
     text-align: center;
     margin: auto;
 }
