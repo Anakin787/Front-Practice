@@ -22,7 +22,7 @@
                     <input id="id" type="text" class="form-id">
                 </div>
                 <div class="my-3">
-                    <input type="password" class="form-pw">
+                    <input id="pw" type="password" class="form-pw">
                 </div>
                 <button type="submit" class="btn btn-primary" id="send">전송</button>
                 <button type="button" class="btn btn-danger" id="close">닫기</button>
@@ -55,6 +55,10 @@
     <button class="open">모달창 열기</button>
 
     <script>
+        if(1==1 && 2==2){
+            console.log('안녕')
+        }
+
         // querySelector(CSS문법사용)- 맨 위에 나오는 한개만 찾아줌 //querySelectorAll 동인한 모든요소 다 찾아줌. 인덱싱사용!!
         $('.navbar-toggler').on('click', function () {
             $('.list-group').toggleClass('show');
@@ -63,10 +67,22 @@
             $('.black-bg').addClass('show-modal');
         });//★jQuery로 애니메이션 만드는것 보다 CSS로 만들기(성능문제)
 
+        document.getElementById('id').addEventListener('input',function(){ //input태그의 이벤트 - input : 내용변경마다 발생 , change : 내용변경후 focus가 바뀌면 발생.
+            console.log('hi');
+        })
+
         $('#send').on('click',function(e){ //{#send,click} or {form,summit} ★form전송시 'summit'이벤트도 발생하기때문
             if(document.getElementById('id').value == ''){ //querySelector사용시 .value는 안되더라. ★중요★
-                alert('아이디를 입력하세요'); //소괄호 뒤에 ;붙이는 습관
                 e.preventDefault();//★폼 전송 방지. (e)는 이벤트객체
+                alert('아이디를 입력하세요'); //소괄호 뒤에 ;붙이는 습관
+            }
+            if(document.getElementById('pw').value == ''){
+                e.preventDefault();//★실행코드 위에 작성
+                alert('비번 입력하셈');
+            }
+            if(document.getElementById('pw').value.length < 6){
+                e.preventDefault();
+                alert('6자리 이상 입력하셈');
             }
         });
     </script>
