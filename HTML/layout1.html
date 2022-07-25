@@ -12,9 +12,14 @@
         <link href="/CSS/ie9.css" type="text/css" rel="stylesheet">
     <![endif]-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-
+    <!-- CSS덮어쓰기 방법 
+        1.더 밑에 있는 css스타일이 우선적용 (link,클래스)
+        2.우선순위 높여도 됌 (비추) 
+        3.specificity점수 높이기  (3번>1번)더 밑에있어도 점수높은거 우선 -->
 </head>
-
+    <!-- 좋은코드
+        1.수정/관리 쉽다.
+        2.확장성이 좋다. 재활용,확장해서 다른클래스 생성 등 -->
 <body>
     <nav class="flex-container">
         <div class="nav-item el1">LOGO</div>
