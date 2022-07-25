@@ -13,7 +13,7 @@
 </head>
 
 
-<body>
+<body class="d">
     <div class="black-bg">
         <div class="white-bg">
             <h4>로그인하세요</h4>
@@ -38,6 +38,7 @@
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <span class="navbar-brand">Navbar</span>
+            <span class="badge bg-dark" id="DL">Dark 🔄</span>
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -55,10 +56,6 @@
     <button class="open">모달창 열기</button>
 
     <script>
-        if (1 == 1 && 2 == 2) {
-            console.log('안녕')
-        }
-
         // querySelector(CSS문법사용)- 맨 위에 나오는 한개만 찾아줌 //querySelectorAll 동인한 모든요소 다 찾아줌. 인덱싱사용!!
         $('.navbar-toggler').on('click', function () {
             $('.list-group').toggleClass('show');
@@ -85,6 +82,21 @@
                 alert('6자리 이상 입력하셈');
             }
         });
+        //var : 재선언,재할당가능 / 범위 : function
+        //let : 재선언(같은이름의 변수생성)불가, 재할당가능
+        //const : 재선언,재할당불가 (변하면 안되는 값)
+        //let,const범위 : 해당{}. var보다 범위 좁음
+        $('.badge').on('click',function(){
+            $('.d').toggleClass('dark');
+            if(n%2==1){
+                document.getElementById('DL').innerHTML='Light'
+                n++
+            }
+            else{
+                document.getElementById('DL').innerHTML='Dark'
+                n++
+            }
+        })
         // 합격판독기
         function abc(a,b) {
             if((a<0||b<0) || (a>100||b>100)){
