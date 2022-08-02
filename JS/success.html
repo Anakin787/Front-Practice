@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
@@ -15,9 +17,12 @@
     <input type="text" id="answer">
     <button class="sa" id="send-answer">제출</button>
 
+    <div class="alert alert-danger">
+        <span id="num">5</span>초 이내 구매시 사은품 증정!
+    </div>
     <script>
-    //1. 유저가 답을 맞추면 alert('정답입니다.'); 틀리면 alert('오답입니다.');
-    //2. 유저가 답을 3번 찍어서 못맞추면 alert('멍청아');
+        //1. 유저가 답을 맞추면 alert('정답입니다.'); 틀리면 alert('오답입니다.');
+        //2. 유저가 답을 3번 찍어서 못맞추면 alert('멍청아');
         var count = 0
         document.getElementById('send-answer').addEventListener('click', function (e) {
             count += 1;
@@ -36,14 +41,31 @@
                 }
             }
         })
-    // 방금 마신 커피의 3분의 2만큼 총 n번 리필
+        // 방금 마신 커피의 3분의 2만큼 총 n번 리필
         var first = 360;
         var total = 0;
 
-        total = first/(1-(2/3));
+        total = first / (1 - (2 / 3));
 
         console.log(total)
+
+        //setTimeout()
+        // setInterval(function(){}//콜백함수자리 => 내가 만든함수도 가능
+        // , 1000);
+        var i=5;
+        setInterval(function(){
+            i--
+            if(i>0){
+                document.getElementById('num').innerHTML = i;
+            }
+            if(i==0){
+                $('.alert').hide();
+            }
+        }, 1000)
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
