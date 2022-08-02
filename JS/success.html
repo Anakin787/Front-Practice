@@ -1,12 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <p>태조 이성계가 태어난 년도는?</p>
+    <input type="text" id="answer">
+    <button class="sa" id="send-answer">제출</button>
+
+    <script>
+    //1. 유저가 답을 맞추면 alert('정답입니다.'); 틀리면 alert('오답입니다.');
+    //2. 유저가 답을 3번 찍어서 못맞추면 alert('멍청아');
+        var count = 0
+        document.getElementById('send-answer').addEventListener('click', function (e) {
+            count += 1;
+            if (document.getElementById('answer').value == '1335') {
+                e.preventDefault();
+                alert('정답입니다.');
+            }
+            else {
+                if (count == 3) {
+                    e.preventDefault();
+                    alert('멍청아');
+                }
+                else {
+                    e.preventDefault();
+                    alert('오답입니다.');
+                }
+            }
+        })
+    // 방금 마신 커피의 3분의 2만큼 총 n번 리필
+        var first = 360;
+        var total = 0;
+
+        total = first/(1-(2/3));
+
+        console.log(total)
+    </script>
 </body>
+
 </html>
