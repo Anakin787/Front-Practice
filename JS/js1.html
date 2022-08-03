@@ -12,11 +12,38 @@
     <link rel="stylesheet" href="/JS/main.css"> <!-- 사용자CSS파일은 맨 밑에 있어야함! -->
 </head>
 
+<!-- One-way UI애니메이션 만드는법 
+        1.시작스타일
+        2.최종스타일
+        3.원할 때 최종스타일로 변하라고 JS코드짬.
+        4.시작스타일에 transition추가-->
 
 <body class="d">
+
+    <!-- navbar만들기 -->
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <span class="navbar-brand">Navbar</span>
+            <span class="badge bg-dark" id="DL">Dark 🔄</span>
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- list만들기 -->
+    <ul class="list-group">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+    </ul>
+
+    <!-- 모달창 만들기 -->
     <div class="black-bg">
         <div class="white-bg">
-            <h4>로그인하세요</h4>\
+            <h4>로그인하세요</h4>
             <!-- 폼 전송성공시 밑의 파일로 이동. -->
             <form action="success.html">
                 <div class="my-3">
@@ -30,52 +57,55 @@
             </form>
         </div>
     </div>
-    <!-- One-way UI애니메이션 만드는법 
-        1.시작스타일
-        2.최종스타일
-        3.원할 때 최종스타일로 변하라고 코드짬.
-        4.시작스타일에 transition추가-->
-
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <span class="navbar-brand">Navbar</span>
-            <span class="badge bg-dark" id="DL">Dark 🔄</span>
-            <button class="navbar-toggler" type="button">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </nav>
-
-    <ul class="list-group">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-        <li class="list-group-item">A fourth item</li>
-        <li class="list-group-item">And a fifth one</li>
-    </ul>
-
     <button class="open">모달창 열기</button>
 
+    <!-- carousel 만들기 -->
+    <div style="overflow: hidden;">
+        <div class="slide-container">
+            <div class="slide-box">
+                <img src="/img/portfolio-1.jpg">
+            </div>
+            <div class="slide-box">
+                <img src="/img/portfolio-2.jpg">
+            </div>
+            <div class="slide-box">
+                <img src="/img/portfolio-3.jpg">
+            </div>
+        </div>
+    </div>
+
+    <button class="slide-0">이전</button>
+    <button class="slide-1" id="1">1</button>
+    <button class="slide-2" id="2">2</button>
+    <button class="slide-3" id="3">3</button>
+    <button class="slide-e">다음</button>
+
+    <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡscript Lineㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
     <script>
-        // querySelector(CSS문법사용)- 맨 위에 나오는 한개만 찾아줌 //querySelectorAll 동인한 모든요소 다 찾아줌. 인덱싱사용!!
+        // list 열고 닫기
+        // querySelector(CSS문법사용)- 맨 위에 나오는 한개만 찾아줌 / querySelectorAll 동인한 모든요소 다 찾아줌. 인덱싱사용!!
         $('.navbar-toggler').on('click', function () {
             $('.list-group').toggleClass('show');
         });
-        $('.open').on('click', function () {                        //★jQuery로 애니메이션 만드는것 보다 CSS로 만들기(성능문제)
+
+        //모달창 열어주기
+        $('.open').on('click', function () {                      //★jQuery로 애니메이션 만드는것 보다 CSS로 만들기(성능문제)
             $('.black-bg').addClass('show-modal');
         });
-        document.getElementById('id').addEventListener('input', function () { //input태그의 이벤트 - input : 내용변경마다 발생 , change : 내용변경후 focus가 바뀌면 발생.
+        //input태그의 이벤트 - input : 내용변경마다 발생 , change : 내용변경후 focus가 바뀌면 발생.
+        document.getElementById('id').addEventListener('input', function () {
             console.log('hi');
         })
 
+        //input값 검증 & 정규표현식
         $('#send').on('click', function (e) {                      //{#send,click} or {form,summit} ★form전송시 'summit'이벤트도 발생하기때문
-            var id=document.getElementById('id').value;
-            var pw=document.getElementById('pw').value;
+            var id = document.getElementById('id').value;
+            var pw = document.getElementById('pw').value;
             if (document.getElementById('id').value == '') {     //querySelector사용시 .value는 안되더라. ★중요★
                 e.preventDefault();                             //★폼 전송 방지. (e)는 이벤트객체
                 alert('아이디를 입력하세요');                    //소괄호 뒤에 ;붙이는 습관
             }
-            if( /\S+@\S+\.\S+/.test(id)==false){              //정규표현식
+            if (/\S+@\S+\.\S+/.test(id) == false) {              //정규표현식
                 e.preventDefault();
                 alert('이메일 형식아님');
             }
@@ -83,7 +113,7 @@
                 e.preventDefault();//★실행코드 위에 작성
                 alert('비번 입력하셈');
             }
-            if( /[A-Z]/.test(pw)==false){
+            if (/[A-Z]/.test(pw) == false) {
                 e.preventDefault();
                 alert('대문자 최소한개 포함해야함');
             }
@@ -93,47 +123,87 @@
             }
         });
 
+        //carousel 만들기
+        var 지금사진=1; //변수활용 해보자.
+        $('.slide-0').on('click', function(e){
+            // var 변수가 안에있으면 클릭시마다 초기화됌.
+            // if(지금사진==4){
+            //     $('.slide-container').css('transform','translateX(-200vw)');
+            //     지금사진--;
+            // }else 
+            if(지금사진==3){
+                $('.slide-container').css('transform','translateX(-100vw)');
+                지금사진--;
+            }else if(지금사진==2){
+                $('.slide-container').css('transform','translateX(0vw)');
+                지금사진--;
+            }else{
+                e.preventDefault();
+                alert('첫 장입니다.');
+            }
+        })
+        $('.slide-1').on('click',function(){
+            $('.slide-container').css('transform','translateX(0vw)');
+        })
+        $('.slide-2').on('click',function(){
+            지금사진=2
+            $('.slide-container').css('transform','translateX(-100vw)');
+        })
+        $('.slide-3').on('click',function(){
+            지금사진=3;
+            $('.slide-container').css('transform','translateX(-200vw)');
+        })
+        $('.slide-e').on('click', function(e){
+            if(지금사진==3){
+                e.preventDefault();
+                alert('마지막 입니다.');
+            }else{
+            $('.slide-container').css('transform','translateX(-'+지금사진+'00vw)'); //변수활용 & 확장성 고려.
+            지금사진++;
+            }
+            
+        })
 
-        //var : 재선언,재할당가능 / 범위 : '함수안에서'만들면 그 '함수안에서만', 밖에서만들면 밖에서 다가능.
-        //let : 재선언(같은이름의 변수생성)불가, 재할당가능
-        //const : 재선언,재할당불가 (변하면 안되는 값)
-        //let,const범위 : 해당{}. var보다 범위 좁음
+        //var : 재선언,재할당가능. 범위 : '함수안에서'만들면 그 '함수안에서만', 밖에서만들면 밖에서 다가능.
+        //let : 재선언(같은이름의 변수생성)불가, 재할당가능. 범위 : 해당{}.
+        //const : 재선언,재할당불가(변하면 안되는 값). 범위 : 해당{}.
 
-        $('.badge').on('click',function(){
+        //예제
+        $('.badge').on('click', function () {
             $('.d').toggleClass('dark');
-            var n=1;
-            if(n%2==1){
-                document.getElementById('DL').innerHTML='Light'
+            var n = 1;
+            if (n % 2 == 1) {
+                document.getElementById('DL').innerHTML = 'Light'
                 n++
             }
-            else{
-                document.getElementById('DL').innerHTML='Dark'
+            else {
+                document.getElementById('DL').innerHTML = 'Dark'
                 n++
             }
         })
 
         // 합격판독기
-        function abc(a,b) {
-            if((a<0||b<0) || (a>100||b>100)){
-                    alert('장난 ㄴㄴ')
+        function abc(a, b) {
+            if ((a < 0 || b < 0) || (a > 100 || b > 100)) {
+                alert('장난 ㄴㄴ')
+            }
+            else {
+                if (a + b >= 120 && a >= 40 && b >= 40) {
+                    console.log('합격입니다.')
                 }
-            else{
-                if (a+b >= 120 && a>=40 && b>=40) {
-                console.log('합격입니다.')
-                }
-                else{
+                else {
                     console.log('불합격입니다.')
                 }
             }
         }
-        abc(10,60)
+        abc(10, 60)
 
         // 3,6,9
-        function 삼육구(n){
-            if(n%10==3 || n%10==6 || n%10==9){
+        function 삼육구(n) {
+            if (n % 10 == 3 || n % 10 == 6 || n % 10 == 9) {
                 console.log('박수')
             }
-            else{
+            else {
                 console.log('통과')
             }
         }
