@@ -23,13 +23,21 @@
     <!-- navbar만들기 -->
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-            <span class="navbar-brand">Navbar</span>
+            <span class="navbar-brand">JIUN</span>
             <span class="badge bg-dark" id="DL">Dark 🔄</span>
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
     </nav>
+
+    <!-- scroll 활용 -->
+    <!-- overflow-y : scroll은 '넘치면 y축으로 scroll하라.' -->
+    <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
+      </div> 
+    <!-- scroll 활용2 -->
+    <div style="height: 1000px"></div>
 
     <!-- list만들기 -->
     <ul class="list-group">
@@ -44,7 +52,7 @@
     <div class="black-bg">
         <div class="white-bg">
             <h4>로그인하세요</h4>
-            <!-- 폼 전송성공시 밑의 파일로 이동. -->
+            <!-- 폼 전송(submit)성공시 밑의 파일로 이동. -->
             <form action="success.html">
                 <div class="my-3">
                     <input id="id" type="text" class="form-id">
@@ -75,9 +83,9 @@
     </div>
 
     <button class="slide-0">이전</button>
-    <button class="slide-1" id="1">1</button>
-    <button class="slide-2" id="2">2</button>
-    <button class="slide-3" id="3">3</button>
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
     <button class="slide-e">다음</button>
 
     <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡscript Lineㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
@@ -180,6 +188,11 @@
             return parseFloat(num); //parseFloat나 parseInt로 문자를 숫자로 변환해준다.
         }
        
+        //scroll기능
+        $(window).on('scroll',function(){
+            console.log($(window).scrollTop()) //나머진 구글에 검색
+        })
+
         //var : 재선언,재할당가능. 범위 : '함수안에서'만들면 그 '함수안에서만', 밖에서만들면 밖에서 다가능.
         //let : 재선언(같은이름의 변수생성)불가, 재할당가능. 범위 : 해당{}.
         //const : 재선언,재할당불가(변하면 안되는 값). 범위 : 해당{}.

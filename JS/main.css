@@ -18,9 +18,20 @@
 }
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* :root{
+    scroll-behavior: auto;
+} */
 .dark {
     background-color: black;
     color: white;
+}
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+.navbar-brand{
+    font-size: 30px;
 }
 .black-bg {
     width: 100%;
