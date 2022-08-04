@@ -69,7 +69,8 @@
     float: left;
 }
 .slide-box img{
-    width: 100%;
+    width: 50%;
+    height: 50%;
 }
 .addvw{
     transform: translateX(100vw);

@@ -97,6 +97,20 @@
             console.log('hi');
         })
 
+        //다크모드
+        var dl = 1;
+        $('.badge').on('click', function () {
+            $('.d').toggleClass('dark');
+            if (dl % 2 == 1) {
+                document.getElementById('DL').innerHTML = 'Light'
+                dl++
+            }
+            else {
+                document.getElementById('DL').innerHTML = 'Dark'
+                dl++
+            }
+        })
+
         //input값 검증 & 정규표현식
         $('#send').on('click', function (e) {                      //{#send,click} or {form,summit} ★form전송시 'summit'이벤트도 발생하기때문
             var id = document.getElementById('id').value;
@@ -127,10 +141,6 @@
         var 지금사진=1; //변수활용 해보자.
         $('.slide-0').on('click', function(e){
             // var 변수가 안에있으면 클릭시마다 초기화됌.
-            // if(지금사진==4){
-            //     $('.slide-container').css('transform','translateX(-200vw)');
-            //     지금사진--;
-            // }else 
             if(지금사진==3){
                 $('.slide-container').css('transform','translateX(-100vw)');
                 지금사진--;
@@ -164,24 +174,17 @@
             
         })
 
+        //함수의  return , 소숫점처리 , 숫자변환  ★'문자'+'숫자'=>'문자숫자'로 이어서 나오기때문에 유의
+        function 함수(a){
+            var num=(a*0.1).toFixed(2); // 소숫점처리 함수 But,문자로 처리가 된다.
+            return parseFloat(num); //parseFloat나 parseInt로 문자를 숫자로 변환해준다.
+        }
+       
         //var : 재선언,재할당가능. 범위 : '함수안에서'만들면 그 '함수안에서만', 밖에서만들면 밖에서 다가능.
         //let : 재선언(같은이름의 변수생성)불가, 재할당가능. 범위 : 해당{}.
         //const : 재선언,재할당불가(변하면 안되는 값). 범위 : 해당{}.
 
         //예제
-        $('.badge').on('click', function () {
-            $('.d').toggleClass('dark');
-            var n = 1;
-            if (n % 2 == 1) {
-                document.getElementById('DL').innerHTML = 'Light'
-                n++
-            }
-            else {
-                document.getElementById('DL').innerHTML = 'Dark'
-                n++
-            }
-        })
-
         // 합격판독기
         function abc(a, b) {
             if ((a < 0 || b < 0) || (a > 100 || b > 100)) {
@@ -209,6 +212,22 @@
         }
         삼육구(103)
 
+        //분,초를 입력하여 ms로 출력하기
+        function ms(a,b){
+                    var m= a*60000;
+                    var s=b*1000;
+                    return m+s+'ms';
+                }
+                console.log(ms(2,10))
+        //10%할인+첫구매시1.5달러 할인
+        function buy(a,b){
+            var total=a*0.9.toFixed(2);
+            if(b){
+                total-=(1.5);
+            }
+            return parseFloat(total)
+        }
+        console.log(buy(70,false))
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
