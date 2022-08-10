@@ -29,15 +29,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
+        <div class="scr-line"></div>
     </nav>
-
-    <!-- scroll 활용 -->
-    <!-- overflow-y : scroll은 '넘치면 y축으로 scroll하라.' -->
-    <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
-      </div> 
-    <!-- scroll 활용2 -->
-    <div style="height: 1000px"></div>
 
     <!-- list만들기 -->
     <ul class="list-group">
@@ -47,6 +40,18 @@
         <li class="list-group-item">A fourth item</li>
         <li class="list-group-item">And a fifth one</li>
     </ul>
+
+    <!-- scroll 활용 -->
+    <!-- overflow-y : scroll은 '넘치면 y축으로 scroll하라.' -->
+    <!-- div박스를 맨밑으로 스크롤시 확인했다는 알림창 띄우기 -->
+    <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll;">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit
+        debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur
+        praesentium exercitationem.
+    </div>
+    <!-- scroll 활용2 -->
+    <!-- 100px이상 스크롤시 폰트사이즈 줄이기 -->
+    <div style="height: 1000px"></div>
 
     <!-- 모달창 만들기 -->
     <div class="black-bg">
@@ -146,52 +151,80 @@
         });
 
         //carousel 만들기
-        var 지금사진=1; //변수활용 해보자.
-        $('.slide-0').on('click', function(e){
+        var 지금사진 = 1; //변수활용 해보자.
+        $('.slide-0').on('click', function (e) {
             // var 변수가 안에있으면 클릭시마다 초기화됌.
-            if(지금사진==3){
-                $('.slide-container').css('transform','translateX(-100vw)');
+            if (지금사진 == 3) {
+                $('.slide-container').css('transform', 'translateX(-100vw)');
                 지금사진--;
-            }else if(지금사진==2){
-                $('.slide-container').css('transform','translateX(0vw)');
+            } else if (지금사진 == 2) {
+                $('.slide-container').css('transform', 'translateX(0vw)');
                 지금사진--;
-            }else{
+            } else {
                 e.preventDefault();
                 alert('첫 장입니다.');
             }
         })
-        $('.slide-1').on('click',function(){
-            $('.slide-container').css('transform','translateX(0vw)');
+        $('.slide-1').on('click', function () {
+            $('.slide-container').css('transform', 'translateX(0vw)');
         })
-        $('.slide-2').on('click',function(){
-            지금사진=2
-            $('.slide-container').css('transform','translateX(-100vw)');
+        $('.slide-2').on('click', function () {
+            지금사진 = 2
+            $('.slide-container').css('transform', 'translateX(-100vw)');
         })
-        $('.slide-3').on('click',function(){
-            지금사진=3;
-            $('.slide-container').css('transform','translateX(-200vw)');
+        $('.slide-3').on('click', function () {
+            지금사진 = 3;
+            $('.slide-container').css('transform', 'translateX(-200vw)');
         })
-        $('.slide-e').on('click', function(e){
-            if(지금사진==3){
+        $('.slide-e').on('click', function (e) {
+            if (지금사진 == 3) {
                 e.preventDefault();
                 alert('마지막 입니다.');
-            }else{
-            $('.slide-container').css('transform','translateX(-'+지금사진+'00vw)'); //변수활용 & 확장성 고려.
-            지금사진++;
+            } else {
+                $('.slide-container').css('transform', 'translateX(-' + 지금사진 + '00vw)'); //변수활용 & 확장성 고려.
+                지금사진++;
             }
-            
+
         })
 
         //함수의  return , 소숫점처리 , 숫자변환  ★'문자'+'숫자'=>'문자숫자'로 이어서 나오기때문에 유의
-        function 함수(a){
-            var num=(a*0.1).toFixed(2); // 소숫점처리 함수 But,문자로 처리가 된다.
+        function 함수(a) {
+            var num = (a * 0.1).toFixed(2); // 소숫점처리 함수 But,문자로 처리가 된다.
             return parseFloat(num); //parseFloat나 parseInt로 문자를 숫자로 변환해준다.
         }
-       
-        //scroll기능
-        $(window).on('scroll',function(){
-            console.log($(window).scrollTop()) //나머진 구글에 검색
+
+        //scroll활용
+        $('.lorem').on('scroll', function () {
+            var 스크롤양 = document.querySelector('.lorem').scrollTop;
+            var 실제크기 = document.querySelector('.lorem').clientHeight;
+            var 전체크기 = document.querySelector('.lorem').scrollHeight;
+            console.log(스크롤양, 실제크기, 전체크기)
+            if (스크롤양 + 실제크기 > 전체크기 - 10) {
+                alert('다 읽으셨습니다.');
+            }
         })
+
+        //scroll활용2
+        $(window).on('scroll', function () { //doucument.Selectquery('.~').addEventListener('scroll',function(){})
+            if (window.scrollY > 100) { // (=doucument.Selectquery('.~').scrollTop)
+                $('.navbar-brand').css('font-size', '20px')
+            }
+            else {
+                $('.navbar-brand').css('font-size', '30px')
+            }
+        })
+
+        //scroll진척도 확인
+        $(window).on('scroll', function () {
+            var 전체크기 = document.querySelector('html').scrollHeight;
+            var 스크롤양 = window.scrollY;
+            var 실제크기 = document.querySelector('html').clientHeight;
+
+            var n = (스크롤양/(전체크기-실제크기))*100;
+            // console.log(n)
+            $('.scr-line').css('width',n+'%');
+        })
+
 
         //var : 재선언,재할당가능. 범위 : '함수안에서'만들면 그 '함수안에서만', 밖에서만들면 밖에서 다가능.
         //let : 재선언(같은이름의 변수생성)불가, 재할당가능. 범위 : 해당{}.
@@ -226,21 +259,21 @@
         삼육구(103)
 
         //분,초를 입력하여 ms로 출력하기
-        function ms(a,b){
-                    var m= a*60000;
-                    var s=b*1000;
-                    return m+s+'ms';
-                }
-                console.log(ms(2,10))
+        function ms(a, b) {
+            var m = a * 60000;
+            var s = b * 1000;
+            return m + s + 'ms';
+        }
+        console.log(ms(2, 10))
         //10%할인+첫구매시1.5달러 할인
-        function buy(a,b){
-            var total=a*0.9.toFixed(2);
-            if(b){
-                total-=(1.5);
+        function buy(a, b) {
+            var total = a * 0.9.toFixed(2);
+            if (b) {
+                total -= (1.5);
             }
             return parseFloat(total)
         }
-        console.log(buy(70,false))
+        console.log(buy(70, false))
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
