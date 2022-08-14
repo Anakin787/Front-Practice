@@ -43,6 +43,29 @@
             This is sample Text. This is sample Text.</p>
     </div>
 
+    <!-- Pseudo-element , Shadow DOM 활용 -->
+    <input type="file">
+    <progress value="30" min="0" max="100"></progress>
+    <style>
+        input[type=file]::-webkit-file-upload-button{
+            background: #1D976C;
+            border: none;
+        }
+        progress{
+            appearance: none;
+        }
+        progress::-webkit-progress-value{
+            background:#1D976C;
+            border-radius: 10px;
+            background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);
+            background: linear-gradient(to right, #93F9B9, #1D976C);
+        }
+        progress::-webkit-progress-bar{
+            background: gray;
+            border-radius: 10px;
+        }
+    </style>
+
     <!-- div여러개 만들때 컨테이너박스 만드는 습관. -->
     <div class="container">
         <div>
