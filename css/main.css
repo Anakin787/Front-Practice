@@ -97,7 +97,6 @@ textarea {
     text-align: center;
     font-size: 18px;
 }
-
 .main-btn {
     border: 2px solid purple;
     border-radius: 20px;
@@ -135,7 +134,11 @@ textarea {
     font-size: 18px;
     text-align: center;
 }
-
+/* Pseudo-element */
+.sub-content::first-letter{
+    color: red;
+    font-size: 30px;
+}
 
 .container {
     width: 80%;
@@ -158,7 +161,13 @@ textarea {
     box-sizing: border-box;
     border-radius: 50px;
 }
-
+.container::after{
+    content: '';
+    display: block;
+    /* div박스만든것과 같음 */
+    clear: both;
+    float: none;
+}
 .shop-bg{
     background-color: #eee;
     padding: 10px;
