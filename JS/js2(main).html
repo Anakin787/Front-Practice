@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/JS/main.css"> <!-- 사용자CSS파일은 맨 밑에 있어야함! -->
+</head>
+
+<!-- One-way UI애니메이션 만드는법 
+        1.시작스타일
+        2.최종스타일
+        3.원할 때 최종스타일로 변하라고 JS코드짬.
+        4.시작스타일에 transition추가-->
+
+<body class="d">
+
+    <!-- navbar만들기 -->
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <span class="navbar-brand">JIUN</span>
+            <span class="badge bg-dark" id="DL">Dark 🔄</span>
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="scr-line"></div>
+    </nav>
+
+    <!-- list만들기 -->
+    <ul class="list-group">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+    </ul>
+
+    <!-- scroll 활용 -->
+    <!-- overflow-y : scroll은 '넘치면 y축으로 scroll하라.' -->
+    <!-- div박스를 맨밑으로 스크롤시 확인했다는 알림창 띄우기 -->
+    <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll;">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit
+        debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur
+        praesentium exercitationem.
+    </div>
+    <!-- scroll 활용2 -->
+    <!-- 100px이상 스크롤시 폰트사이즈 줄이기 -->
+    <div style="height: 1000px"></div>
+
+    <!-- 모달창 만들기 -->
+    <div class="black-bg">
+        <div class="white-bg">
+            <h4>로그인하세요</h4>
+            <!-- 폼 전송(submit)성공시 밑의 파일로 이동. -->
+            <form action="success.html">
+                <div class="my-3">
+                    <input id="id" type="text" class="form-id">
+                </div>
+                <div class="my-3">
+                    <input id="pw" type="password" class="form-pw">
+                </div>
+                <button type="submit" class="btn btn-primary" id="send">전송</button>
+                <button type="button" class="btn btn-danger" id="close">닫기</button>
+            </form>
+        </div>
+    </div>
+    <button class="open">모달창 열기</button>
+
+    <!-- carousel 만들기 -->
+    <div style="overflow: hidden;">
+        <div class="slide-container">
+            <div class="slide-box">
+                <img src="/img/portfolio-1.jpg">
+            </div>
+            <div class="slide-box">
+                <img src="/img/portfolio-2.jpg">
+            </div>
+            <div class="slide-box">
+                <img src="/img/portfolio-3.jpg">
+            </div>
+        </div>
+    </div>
+
+    <button class="slide-0">이전</button>
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+    <button class="slide-e">다음</button>
+
+    <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡscript Lineㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
