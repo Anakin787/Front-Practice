@@ -26,3 +26,9 @@ function tab(a){
     탭.removeClass('show-tab');
     탭.eq(a).addClass('show-tab');
 }
+
+var car=['소나타',50000,'white']; //array자료형
+var car2={name:'소나타',price:[50000,40000,30000]}; //object자료형
+$('span').eq(0).html(car[0]);
+document.querySelectorAll('span')[1].innerHTML= (car2['price'])[1];
+console.log(car2.price[1])
