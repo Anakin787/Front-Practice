@@ -20,7 +20,20 @@
         </div>
     </div>
 
-
+    <form class="container my-5 form-group">
+        <p>상품선택</p>
+        <!-- select에는 input과change이벤트 발생 -->
+        <select class="form-select mt-2">
+          <option>모자</option>
+          <option>셔츠</option>
+          <option>바지</option>
+        </select>
+        <!-- 미리 숨겨놨다 보여주는식은 ★확장성부족 -->
+        <select class="form-select mt-2 hide">
+          <option>95</option>
+          <option>100</option>
+        </select>
+    </form> 
 
 
     <div class="container mt-5">
@@ -39,6 +52,13 @@
             <p>배송정보입니다. Shipping</p>
         </div>
     </div>
+
+    <div id="test"></div>
+    <style>
+        .hide{
+            display: none;
+        }
+    </style>
     <script src="js4.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
