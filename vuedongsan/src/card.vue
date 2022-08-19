@@ -1,7 +1,7 @@
 <template>
   <div >
     <img class="room-img" :src="원룸.image" />
-    <h4>{{ 원룸.title }}</h4>
+    <h4 @click="$emit('openModal',원룸.id)">{{ 원룸.title }}</h4>
     <p>{{ 원룸.price }}</p> 
     <!-- 재정의한 변수이름으로 써야한다~! -->
   </div>

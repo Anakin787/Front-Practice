@@ -1,6 +1,6 @@
 <template>
 
-<m :원룸들="원룸들" :클릭번호="클릭번호" :모달창상태="모달창상태"/>
+<m @close="모달창상태=false" :원룸들="원룸들" :클릭번호="클릭번호" :모달창상태="모달창상태"/>
 
 <div class="menu" >
   <a v-for="(a,i) in 메뉴들" :key="i">{{a}}</a>
@@ -13,8 +13,8 @@
   <button @click="click(i)">허위매물신고</button><span>클릭수 : {{신고수[i]}}</span>
 </div> -->
 
-<card :원룸="원룸들[i]" v-for="(b,i) in 원룸들" :key="i"/>
-
+<card @openModal="모달창상태=true; 클릭번호=$event" :원룸="원룸들[i]" v-for="(b,i) in 원룸들" :key="i"/>
+<!-- 자식이보낸 데이터는 $event변수에 담겨있음. -->
 </template>
 
 <script>
@@ -36,7 +36,7 @@ export default {
       신고수: [0, 0, 0],
     };
   },
-
+  //this붙여아한다.
   methods: {
     click(a) {
       this.신고수[a]++;
