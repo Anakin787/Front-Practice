@@ -14,6 +14,7 @@
 
   <button @click="pricesort">가격순정렬</button>
   <button @click="alphasort">가나다순정렬</button>
+  <button @click="under50">필터순정렬</button>
   <button @click="sortback">되돌리기</button>
 
   <!-- <div v-for="(b,i) in 원룸들" :key="i">
@@ -66,13 +67,17 @@ export default {
       });
     },
     alphasort() {
-      //sort()는 원본을 변형.
       this.원룸들.sort(function (a, b) {
-          return a.title.localeCompare(b.title)
+          return a.title.localeCompare(b.title) //localeCompare : 문자열비교
+      });
+    },
+    under50() {
+      this.원룸들 = [...this.원룸들오리지널].filter((a) => {
+        return a.price<'500000';
       });
     },
     sortback() {
-      this.원룸들 = [...this.원룸들오리지널]; //array에 등호는 두 array를 공유한다는뜻.
+      this.원룸들 = [...this.원룸들오리지널]; //array에 등호는 두 array를 공유한다는뜻. 같이수정됌.
     },
   },
 
