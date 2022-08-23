@@ -12,6 +12,7 @@
     <a v-for="(a, i) in 메뉴들" :key="i">{{ a }}</a>
   </div>
 
+  <Discount v-if="showDiscount == true"  />
   <button @click="pricesort">가격순정렬</button>
   <button @click="alphasort">가나다순정렬</button>
   <button @click="under50">필터순정렬</button>
@@ -39,6 +40,7 @@
 import data from "./data";
 import m from "./m.vue";
 import card from "./card.vue";
+import Discount from "./discount.vue";
 
 export default {
   name: "App",
@@ -46,6 +48,7 @@ export default {
   // 변수저장부
   data() {
     return {
+      showDiscount: true,
       원룸들오리지널: [...data], //사본만드는 [...array]자료형
       클릭번호: 0,
       모달창상태: false,
@@ -63,27 +66,27 @@ export default {
     pricesort() {
       //sort()는 원본을 변형.
       this.원룸들.sort(function (a, b) {
-          return a.price-b.price;
+        return a.price - b.price;
       });
     },
     alphasort() {
       this.원룸들.sort(function (a, b) {
-          return a.title.localeCompare(b.title) //localeCompare : 문자열비교
+        return a.title.localeCompare(b.title); //localeCompare : 문자열비교
       });
     },
     under50() {
       this.원룸들 = [...this.원룸들오리지널].filter((a) => {
-        return a.price<'500000';
+        return a.price < "500000";
       });
     },
     sortback() {
       this.원룸들 = [...this.원룸들오리지널]; //array에 등호는 두 array를 공유한다는뜻. 같이수정됌.
     },
   },
-
   components: {
     m: m,
     card: card,
+    Discount,
   },
 };
 </script>
