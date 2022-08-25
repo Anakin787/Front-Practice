@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Encurity</a>
+      <a style="font-size: 1.5rem;color: blue;" class="navbar-brand">Ncurity</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -16,49 +16,63 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="#"
               ><router-link to="/login">Login</router-link><br
             /></a>
           </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" href="#"
-                  ><router-link to="/admin">관리자페이지</router-link></a
-                >
-              </li>
-              <li><hr class="dropdown-divider" /></li>
-              <li>
-                <a class="dropdown-item" href="#"
-                  ><router-link to="/stat">통계페이지</router-link></a
-                >
-              </li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="#"
+              ><router-link to="/admin">Admin</router-link><br
+            /></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"
+              ><router-link to="/stat">Stat</router-link><br
+            /></a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <router-view></router-view>
+
+  <div>
+    <p style="font-size: 1.2rem; margin-top: 30px">버튼을 눌러주세요▼</p>
+
+    <router-link style="padding:5px" to="/login">
+      <button @click="openTran" type="submit" class="btn btn-success">
+        Login
+      </button>
+    </router-link>
+
+    <router-link style="padding:5px" to="/admin">
+      <button @click="openTran" type="submit" class="btn btn-success">
+        Admin
+      </button> </router-link>
+
+    <router-link style="padding:5px" to="/stat">
+      <button @click="openTran" type="submit" class="btn btn-success">
+        Stat
+      </button>
+    </router-link>
+  </div>
+
+  <transition name="login">
+    <router-view :loginTran="loginTran"></router-view>
+  </transition>
 </template>
 
 <script>
 export default {
   name: "App",
   data() {
-    return {};
+    return {
+      loginTran: 0,
+    };
+  },
+  methods: {
+    openTran() {
+      this.loginTran = 1;
+    },
   },
 };
 </script>
@@ -70,10 +84,14 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
-.navbar-brand {
-  margin-bottom: 10px;
+.navbar{
+  border-bottom:1px solid black ;
 }
-a:link:visited:hover {
+.navbar-nav{
+  font-size: 1.5rem;
+}
+a:link,
+router-link:link {
   color: black;
   text-decoration: none;
 }
@@ -82,12 +100,21 @@ a:visited {
   text-decoration: none;
 }
 a:hover {
-  color: gray;
-  text-decoration: underline;
+  color: white;
+  text-decoration: none;
+}
+.btn {
+  width: 100px;
+  height: 50px;
+  font-size: 1.5rem;
+}
+.login-link {
+  font-size: 2rem;
+  margin-top: 100px;
 }
 .bg {
   margin: auto;
-  margin-top: 300px;
+  margin-top: 200px;
   width: 20%;
   height: 60%;
   background: skyblue;
@@ -97,5 +124,23 @@ a:hover {
   background: white;
   border-radius: 5px;
   padding: 30px;
+}
+.login-enter-from {
+  opacity: 0;
+}
+.login-enter-active {
+  transition: all 1s;
+}
+.login-enter-to {
+  opacity: 1;
+}
+.login-leave-from {
+  opacity: 1;
+}
+.login-leave-active {
+  transition: all 1s;
+}
+.login-leave-to {
+  opacity: 0;
 }
 </style>

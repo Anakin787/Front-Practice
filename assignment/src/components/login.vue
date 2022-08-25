@@ -1,14 +1,13 @@
 <template>
-  <div class="bg" id="e">
+  <div class="bg" v-if="loginTran==1">
     <div class="white-bg">
       <img src="./Enlogo.jpg" />
-      <h4 style="margin-bottom: 40px">엔큐리티/엔큐리티플랫폼</h4>
       <form v-on:submit="submitForm">
         <div class="my-3">
           <span style="margin-right: 20px">ID</span>
           <input
             id="id"
-            placeholder="aaa@bbb.com"
+            placeholder="Username"
             type="text"
             class="form-id"
           />
@@ -17,7 +16,7 @@
           <span style="margin-right: 12px">PW</span>
           <input
             id="pw"
-            placeholder="비밀번호"
+            placeholder="＊＊＊＊"
             type="password"
             class="form-pw"
           />
@@ -37,7 +36,9 @@ export default {
       url: url,
     };
   },
-  props: {},
+  props: {
+    loginTran:Number
+  },
 };
 </script>
 
