@@ -1,15 +1,12 @@
 <template>
-   <div class="index">
-    통계페이지
-  </div>
+  <div class="index">admin페이지</div>
 </template>
 
 <script>
 export default {
-
-}
+  name: "admin",
+};
 </script>
 
 <style>
-
 </style>
