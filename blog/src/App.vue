@@ -58,11 +58,18 @@
     <h4>Vue개발자의 블로그입니다.</h4>
     <p>ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ</p>
   </div>
-  <list :블로그글='블로그글'/>
+
+  <router-link to="/list">리스트페이지</router-link><br>
+  <router-link to="/home">홈페이지</router-link><br>
+  <router-link to="/detail">상세페이지</router-link><br>
+  
+  <router-view :블로그글='블로그글'></router-view>
+
+  <!-- <list :블로그글='블로그글[i]' v-for="(a,i) in 블로그글" :key="i"/> -->
 </template>
 
 <script>
-import list from "./components/list.vue";
+// import list from "./components/list.vue";
 export default {
   name: "App",
   data() {
@@ -91,7 +98,7 @@ export default {
     };
   },
   components: {
-    list: list,
+    // list: list,
   },
 };
 </script>
