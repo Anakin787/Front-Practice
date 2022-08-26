@@ -60,7 +60,6 @@
   <transition name="login">
     <router-view :loginTran="loginTran"></router-view>
   </transition>
-
 </template>
 
 <script>
