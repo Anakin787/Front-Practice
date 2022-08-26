@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-      <a style="font-size: 1.5rem;color: blue;" class="navbar-brand">Ncurity</a>
+      <a style="font-size: 1.5rem; color: blue" class="navbar-brand">Ncurity</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -38,18 +38,19 @@
   <div>
     <p style="font-size: 1.2rem; margin-top: 30px">버튼을 눌러주세요▼</p>
 
-    <router-link style="padding:5px" to="/login">
+    <router-link style="padding: 5px" to="/login">
       <button @click="openTran" type="submit" class="btn btn-success">
         Login
       </button>
     </router-link>
 
-    <router-link style="padding:5px" to="/admin">
+    <router-link style="padding: 5px" to="/admin">
       <button @click="openTran" type="submit" class="btn btn-success">
         Admin
-      </button> </router-link>
+      </button>
+    </router-link>
 
-    <router-link style="padding:5px" to="/stat">
+    <router-link style="padding: 5px" to="/stat">
       <button @click="openTran" type="submit" class="btn btn-success">
         Stat
       </button>
@@ -59,9 +60,14 @@
   <transition name="login">
     <router-view :loginTran="loginTran"></router-view>
   </transition>
+
 </template>
 
 <script>
+// import { AgGridVue } from "ag-grid-vue3";
+import "ag-grid-community/styles/ag-grid.css";
+import "ag-grid-community/styles/ag-theme-alpine.css";
+
 export default {
   name: "App",
   data() {
@@ -84,10 +90,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
-.navbar{
-  border-bottom:1px solid black ;
+.navbar {
+  border-bottom: 1px solid black;
 }
-.navbar-nav{
+.navbar-nav {
   font-size: 1.5rem;
 }
 a:link,
