@@ -1,4 +1,11 @@
 <template>
+<!-- 엔큐리티 과제 v1.0
+과제 진척상황
+1.Vuetify를 사용해야하지만 능숙히 사용가능한 부트스트랩을 이용하여 디자인.
+2.로그인버튼을 눌러야 admin,stat페이지로 이동해야하지만 관련지식(기술)부족으로 스스로 학습한 부분만이라도 이용하여 개별페이지 작성(컴포넌트를 사용하여 확인할수있게끔 작성).
+3.로그인페이지,관리자페이지(ag-grid학습후 적용)
+4.No-Base에서 2달간 학습한 내용(HTML,CSS,JS,Vue기초)
+4-1.Vue는 데이터바인딩 조건문 컴포넌트 router 동적UI JSON파일import등 페이지작성에필요한 기초적인정도는 학습함.-->
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
       <a style="font-size: 1.5rem; color: blue" class="navbar-brand">Ncurity</a>
@@ -13,6 +20,7 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
+      <!-- navbar를 이용해서도 클릭시 해당페이지가 뜨도록 설계함. -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
@@ -35,9 +43,9 @@
     </div>
   </nav>
 
+<!-- 버튼을 누르면 해당페이지(컴포넌트)가 아래에 뜨도록 설계함. -->
   <div>
     <p style="font-size: 1.2rem; margin-top: 30px">버튼을 눌러주세요▼</p>
-
     <router-link style="padding: 5px" to="/login">
       <button @click="openTran" type="submit" class="btn btn-success">
         Login
@@ -45,13 +53,13 @@
     </router-link>
 
     <router-link style="padding: 5px" to="/admin">
-      <button @click="openTran" type="submit" class="btn btn-success">
+      <button type="submit" class="btn btn-success">
         Admin
       </button>
     </router-link>
 
     <router-link style="padding: 5px" to="/stat">
-      <button @click="openTran" type="submit" class="btn btn-success">
+      <button type="submit" class="btn btn-success">
         Stat
       </button>
     </router-link>
@@ -63,7 +71,6 @@
 </template>
 
 <script>
-// import { AgGridVue } from "ag-grid-vue3";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 

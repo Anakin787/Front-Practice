@@ -1,6 +1,6 @@
 <template>
   <div class="grid-box">
-    <h1 style="margin-top:50px">AdminPage</h1>
+    <h1 style="margin-top: 50px">AdminPage</h1>
     <ag-grid-vue
       class="ag-theme-alpine"
       :columnDefs="columnDefs"
@@ -18,10 +18,10 @@ export default {
   data() {
     return {
       columnDefs: [
-        { field: "seq" ,sortable:true},
+        { field: "seq", sortable: true ,checkboxSelection:true},
         { field: "id" },
         { field: "pw" },
-        { field: "name",sortable:true },
+        { field: "name", sortable: true },
         { field: "email" },
         { field: "hp" },
         { field: "role" },
@@ -39,7 +39,7 @@ export default {
 
 <style>
 .ag-theme-alpine {
-  width: 1500px;
+  width: 80%;
   height: 700px;
   margin: auto;
 }
