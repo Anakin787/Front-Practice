@@ -6,6 +6,7 @@
 3.로그인페이지,관리자페이지(ag-grid학습후 적용)
 4.No-Base에서 2달간 학습한 내용(HTML,CSS,JS,Vue기초)
 4-1.Vue는 데이터바인딩 조건문 컴포넌트 router 동적UI JSON파일import등 페이지작성에필요한 기초적인정도는 학습함.-->
+<!-- 수정좀 -->
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
       <a style="font-size: 1.5rem; color: blue" class="navbar-brand">Ncurity</a>
