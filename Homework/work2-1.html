@@ -15,13 +15,16 @@
 <body>
     <div class="container">
         <div class="row">
-            
+
         </div>
     </div>
 
-        <div class="container">
-            <button class="btn btn-danger">더보기</button>
-        </div>
+    <div class="container">
+        <button class="btn btn-danger" style="margin-bottom:5px">다나가순</button>
+    </div>
+    <div class="container">
+        <button class="btn btn-danger">6만이하 더보기</button>
+    </div>
 
 
     <script>
@@ -31,17 +34,19 @@
             { id: 2, price: 60000, title: 'Black Monastery' }
         ];
 
-        var array=[7,6,5,4,30];
-        // array.sort(function(a,b){  //원본수정
-        //     return a-b //return오른쪽이 양수면 a를 오른쪽으로 보냄.
+        var array = [7, 6, 5, 4, 30];
+
+        // array.sort(function (a, b) {  //sort원본수정
+        //     return a - b //return오른쪽이 양수면 a를 오른쪽으로 보냄.
         // });
 
-        var newarr=array.filter(function(a){  //원본그대로(변수에 저장해서 써야)
-            return a<20
-        })
+        // var newarr = array.filter(function (a) {  //filter-원본그대로(변수에 저장해서 써야)
+        //     return a < 20
+        // })
 
-
-        console.log(newarr)
+        // var newarr2 = array.map(function (a) { //map-array자료 전부 변형하려면.
+        //     return a * 1000
+        // })
     </script>
 
     <script src="work2-1.js"></script>
