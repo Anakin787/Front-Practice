@@ -11,7 +11,10 @@ function titlePrice(a) {
 var b = 'b';
 console.log(`a${b}a`)
 
-$.get('https://codingapple1.github.io/price.json') //JSON을 자동으로 object로바꿔줌
+/**
+ * JSON을 자동으로 object로바꿔줌
+ */
+$.get('https://codingapple1.github.io/price.json')
     .done(function (data) { //성공시
         console.log(data)
     })

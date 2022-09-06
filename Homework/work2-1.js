@@ -24,6 +24,9 @@ $('.btn').on('click',function(){
     else if(i==1){
         $.get('https://codingapple1.github.io/js/more2.json')
         .done(function(data){
+            data.sort(function(a,b){
+                return a.price-b.price
+            })
             data.forEach((b) => {
                 $('.row').eq(0).append(`<div class="col-sm-4">
                 <img src="https://via.placeholder.com/600" class="w-100">
