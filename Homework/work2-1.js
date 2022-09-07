@@ -1,11 +1,12 @@
-$('#btn').on('submit', function () {
-    var value = $('#num').val();
+/**
+ * 사용자 입력을 받아서 filter적용
+ */
+$('form').on('submit', function (e) {
+    var value = document.getElementById('num').value
+    console.log(value)
 
-    printValue();
     $('.row').html('')
-
     inp = products.filter(v => v.price <= value)
-
     inp.forEach((a) => {
         $('.row').append(`<div class="col-sm-4">
     <img src="https://via.placeholder.com/600" class="w-100">
@@ -13,11 +14,12 @@ $('#btn').on('submit', function () {
     <p>가격 : ${a.price}</p>
   </div>`)
     })
+    e.preventDefault(); //form을 submit하면 새로고침을하는데 이걸 방지.
 })
-// function printValue(){
-//     var value = $('#num').val();
-// }
 
+/**
+ * 다나가순 정렬
+ */
 // $('.btn').eq(0).on('click', function () {
 //     products.sort(function (a, b) {
 //         if (a.title < b.title) return 1;
