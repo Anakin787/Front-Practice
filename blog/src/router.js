@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import list from './components/list.vue'
 import home from './components/home.vue'
 import detail from './components/detail.vue'
+import Author from './components/Author.vue'
 
 const routes = [
   {
@@ -13,8 +14,14 @@ const routes = [
     component: home,
   },
   {
-    path: "/detail/:id(\\d+)",
+    path: "/detail/:id",
     component: detail,
+    children:[ //특정 페이지 안에서 route를 나누고 싶을때 nested routes쓴다.
+      {
+      path:"Author",
+      component:Author
+      }
+    ]
   }
 ];
 
