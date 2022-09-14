@@ -24,7 +24,8 @@ $('.buy').click(function (e) {
 
     //여러가지 표기형식으로 테스트해보기.(변수에 담아 쓰든 바로 집어넣든.) - 다양하게 집어넣어보기!
     //내가 쓰는 변수의 상태가 어떻게 나오는지확인.(null인지 값이 있는지) - console사용하여 확인하는 습관! - 조건식에 활용여부 체크.
-    if ((localStorage.items == null)) {
+    // 등호는 ===를 쓰는게 좋다.
+    if ((localStorage.items === null)) {
         var arr = new Array();
         arr.push(t);
         localStorage.setItem('items', JSON.stringify(arr))
