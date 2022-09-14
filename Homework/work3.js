@@ -24,7 +24,6 @@ function 이름찾기(a){
  * @param {array} array 배열넣으쇼
  * @param {number} num 값을넣으쇼
  */
-
 function avg(array,num){
     var aver=0
     array.forEach((a)=>{
