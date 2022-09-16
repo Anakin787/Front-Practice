@@ -11,7 +11,7 @@
           <span style="margin-right: 12px">PW</span>
           <input
             id="pw"
-            placeholder="＊＊＊＊"
+            placeholder="****"
             type="password"
             class="form-pw w80"
           />

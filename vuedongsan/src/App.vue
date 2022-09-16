@@ -1,39 +1,31 @@
 <template>
-  <transition name="fade">
-    <m
-      @close="모달창상태 = false"
-      :원룸들="원룸들"
-      :클릭번호="클릭번호"
-      :모달창상태="모달창상태"
-    />
-  </transition>
+  <div>
 
-  <div class="menu">
-    <a v-for="(a, i) in 메뉴들" :key="i">{{ a }}</a>
-  </div>
+    <transition name="fade">
+      <m @close="모달창상태 = false" :원룸들="원룸들" :클릭번호="클릭번호" :모달창상태="모달창상태" />
+    </transition>
+    <div class="menu">
+      <a v-for="(a, i) in 메뉴들" :key="i">{{ a }}</a>
+    </div>
 
-  <Discount v-if="showDiscount == true"  />
-  <button @click="pricesort">가격순정렬</button>
-  <button @click="alphasort">가나다순정렬</button>
-  <button @click="under50">필터순정렬</button>
-  <button @click="sortback">되돌리기</button>
+    <Discount v-if="showDiscount == true" />
+    <button @click="pricesort">가격순정렬</button>
+    <button @click="alphasort">가나다순정렬</button>
+    <button @click="under50">필터순정렬</button>
+    <button @click="sortback">되돌리기</button>
 
-  <!-- <div v-for="(b,i) in 원룸들" :key="i">
+    <!-- <div v-for="(b,i) in 원룸들" :key="i">
   <img class="room-img" :src="b.image">
   <h4 @click="모달창상태=true;클릭번호=i">{{b.title}}</h4>
   <p>{{b.price}}</p>
   <button @click="click(i)">허위매물신고</button><span>클릭수 : {{신고수[i]}}</span>
 </div> -->
 
-  <card
-    @openModal="
+    <card @openModal="
       모달창상태 = true;
       클릭번호 = $event;
-    "
-    :원룸="원룸들[i]"
-    v-for="(b, i) in 원룸들"
-    :key="i"
-  />
+    " :원룸="원룸들[i]" v-for="(b, i) in 원룸들" :key="i" />
+  </div>
 </template>
 
 <script>
@@ -95,9 +87,11 @@ export default {
 body {
   margin: 0;
 }
+
 div {
   box-sizing: border-box;
 }
+
 .black-bg {
   width: 100%;
   height: 100%;
@@ -105,12 +99,14 @@ div {
   position: fixed;
   padding: 20px;
 }
+
 .white-bg {
   width: 100%;
   background: white;
   border-radius: 8px;
   padding: 20px;
 }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -124,35 +120,44 @@ div {
   padding: 15px;
   border-radius: 5px;
 }
+
 .menu a {
   color: white;
   padding: 10px;
 }
+
 .room-img {
   width: 100%;
   margin-top: 40px;
 }
+
 .discount {
   background: gray;
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
 }
+
 .fade-enter-from {
   transform: translateY(-1000px);
 }
+
 .fade-enter-active {
   transition: all 1s;
 }
+
 .fade-enter-to {
   transform: translateY(0px);
 }
+
 .fade-leave-from {
   opacity: 1;
 }
+
 .fade-leave-active {
   transition: all 1s;
 }
+
 .fade-leave-to {
   opacity: 0;
 }
