@@ -1,19 +1,25 @@
 <template>
   <div>
-    컨테이너에요
-    <post/>
-    <post/>
-    <post/>
+      <post :피드="data" />
+      <!-- <post :피드="data" />
+      <post :피드="data" /> -->
   </div>
 </template>
 
 <script>
-  import Post from './Post.vue'
+import Post from './Post.vue'
 
 export default {
- components:{
-  Post:Post
- }
+  components: {
+    Post: Post
+  },
+  data() {
+    return {
+    }
+  },
+  props: {
+    data: Array,
+  }
 }
 </script>
 
