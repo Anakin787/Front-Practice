@@ -9,12 +9,11 @@
 var 자료 = {
     data: [1, 2, 3, 4, 5],
     전부더하기: function() {
+        var b=0
         this.data.forEach((a,i) => {
-            // a=a+this.data[i+1]
-            this.data[i]+=this.data[i+1]
-            console.log(this.data[i])
-            // console.log(a)
+            b+=a
         });
+        return b
     }
 }
-자료.전부더하기()
+console.log(자료.전부더하기())
