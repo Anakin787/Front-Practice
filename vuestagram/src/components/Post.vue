@@ -2,10 +2,10 @@
     <div>
         <div class="post" v-for="(a,i) in 피드" :key="i">
             <div class="post-header">
-                <div class="profile"></div>
+                <div class="profile" :style="{backgroundImage:`url(${a.userImage})`}"></div>
                 <span class="profile-name">{{a.name}}</span>
             </div>
-            <div class="post-body"></div>
+            <div class="post-body" :style="{backgroundImage:`url(${a.postImage})` }"></div>
             <div class="post-content">
                 <p>{{a.likes}}</p>
                 <p><strong>{{a.name}}</strong>{{a.content}}</p>
@@ -29,7 +29,7 @@ export default {
 }
 
 .profile {
-    background-image: url("https://placeimg.com/100/100/arch");
+    /* background-image: url("https://placeimg.com/100/100/arch"); */
     width: 30px;
     height: 30px;
     background-size: 100%;
@@ -51,7 +51,7 @@ export default {
 }
 
 .post-body {
-    background-image: url("https://placeimg.com/640/480/animals");
+    /* background-image: url("https://placeimg.com/640/480/animals"); */
     height: 450px;
     background-position: center;
     background-size: cover;
