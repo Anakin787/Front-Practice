@@ -1,4 +1,4 @@
-//JS를 순차적으로 실행 시키기 위해서 콜백함수를 사용한다.(콜백함수는 함수안의 함수를 의미한다.)
+// //JS를 순차적으로 실행 시키기 위해서 콜백함수를 사용한다.(콜백함수는 함수안의 함수를 의미한다.)
 
 첫째함수(둘째함수)
 //콜백함수는 함수 디자인 패턴일 뿐
@@ -78,3 +78,38 @@ function runajax(URL) {
       })
    })
 }
+//ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+async function 더하기() { //Promise 디자인 없이 생성 - 파라미터가 없기때문에 성공의경우만 가능.
+   var 프로미스 = new Promise(function (resolve, reject) {
+      var 힘든연산 = 1 + 1;
+      resolve(100);
+      // reject(100)
+
+   })
+   try {
+      var 결과 = await 프로미스;  //then()을 쉽게 대체하는 문법. 그 이상 그 이하도 아님. - 프로미스 실패시 에러나고 멈춤.
+      console.log(결과);
+   }catch{
+      console.log('실패')
+   }
+   //방지하려면 try{ 이걸해보고 에러나면 }catch{ 이걸해봐라 } 사용
+
+   //return을 해주면 수행결과값을 전달해줌
+}
+더하기()
+
+//실습예제
+
+async function 버튼누르면() {
+   var 프로미스 = new Promise(function (resolve, reject) {
+      $('#버튼').on('click', function () {
+         resolve('성공')
+      })
+   })
+
+   var r=await 프로미스;
+   console.log(r)
+}
+
+버튼누르면()
