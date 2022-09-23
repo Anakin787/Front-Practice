@@ -23,9 +23,10 @@ document.querySelector('form').addEventListener('submit', function (e) {
  */
 var c = 0
 document.querySelectorAll('.checkA')[0].addEventListener('click', function () {
+    var checkA = document.querySelectorAll('.checkA') //추후에 이것의 상태를 조건으로 만들자
     var checkL = document.querySelectorAll('.check')
 
-    if (c % 2 == 0) {
+    if (c%2==0) {
         for (let i = 0; i < checkL.length; i++) {
             checkL[i].checked = true;
             c++;
