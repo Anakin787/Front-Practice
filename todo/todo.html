@@ -7,14 +7,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-do List</title>
     <link rel="stylesheet" href="todo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- 이미지 하나만 쓰기위해 사용 (코드와는 무관) -->
 </head>
 
 <body>
-    <div class="container">
-        <div class="title">ToDo List Page</div>
-        <form><input class="input" type="text" placeholder="➡️Please Enter your To-do List"></form>
+    <div id="container">
+        <div id="title">ToDo List Page</div>
+
+        <form><input class="input" type="text" placeholder="➡️Please Enter your To-do List"><br></form>
+
+        <div id="listBox">
+            <div class="list-under-line">
+                <input class="check" type="checkbox">
+                <p style="display: inline-block;">List</p>
+            </div>
+
+            <div class="addList">
+            </div>
+
+            <br>
+            <div class="list-under-line"></div>
+
+            <div>
+                <p class="cpl" style="float:left;">Complete : <span class="num">체크한 수만큼 숫자가 나와야함</span></p>
+                <button class="del delsel" style="float:right;">Delete Selected</button>
+                <button class="del delall" style="float:right;">Clear All</button>
+            </div>
+        </div>
+
+
+
+
     </div>
-    <script src="/todo/todo.js"></script>
+    <script src="todo.js"></script>
 </body>
 
 </html>
