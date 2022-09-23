@@ -8,8 +8,7 @@ body {
 }
 
 #container{
-    width: 50%;
-    height: 100% ;
+    width: 60%;
     display: inline-block;
     position: relative;
     top: 200px;
@@ -48,13 +47,30 @@ button{
     border-radius: 15px;
     background-color: beige;
 }
-/* .list{
-    display: none;
-} */
 .cpl{
     text-align: left;
 }
 .del{
     margin: 10px;
     width: 20%;
+}
+
+@media screen and (max-width :768px) {
+    #container{
+        width: 90%;
+        height: 500px;
+        top:50px
+    }
+    #title {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    .input{
+        width: 70%;
+        font-size: medium;
+    }
+    .del{
+        width:30%;
+        margin-top: 13px;
+    }
 }
