@@ -83,8 +83,8 @@ function runajax(URL) {
 async function 더하기() { //Promise 디자인 없이 생성 - 파라미터가 없기때문에 성공의경우만 가능.
    var 프로미스 = new Promise(function (resolve, reject) {
       var 힘든연산 = 1 + 1;
-      resolve(100);
-      // reject(100)
+      // resolve(100);
+      reject(100)
 
    })
    try {
@@ -102,7 +102,7 @@ async function 더하기() { //Promise 디자인 없이 생성 - 파라미터가
 //실습예제
 
 async function 버튼누르면() {
-   var 프로미스 = new Promise(function (resolve, reject) {
+   var 프로미스 = new Promise(function (resolve) {
       $('#버튼').on('click', function () {
          resolve('성공')
       })
