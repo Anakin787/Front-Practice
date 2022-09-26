@@ -1,7 +1,7 @@
 /**
- * form에서 submit이벤트를 발생시키면 입력한 데이터를 content에담고, 로컬스토리지로 옮긴다.
- * submit할 때 마다 리스트HTML템플릿을 로컬스토리지에 저장한 데이터를 넣어서 함께 추가한다.
- * 검색창 초기화를 위해 input태그에 공백을 넣었다.
+ * form에서 submit이벤트를 발생시키면 입력한 데이터를 LS(로컬스토리지)로 옮긴 후 그 값을 화면에 보여지게 하는코드이다.
+ * 새로고침시 LS 초기화를 방지하기 위하여 이벤트리스너 외부에 변수를 선언하여 LS에 저장되어있는 값을 옮겨놓았다.
+ * 옯겨진 배열에 입력한 값을 추가를 하여 리스트를 유지시켰다.
  */
 var arr = new Array;
 document.querySelector('form').addEventListener('submit', function (e) {
@@ -29,7 +29,7 @@ function 리스트(e) {
     return document.querySelector('.addList').insertAdjacentHTML("beforeend", `<div class="list">
     <input class="check" type="checkbox">
     <p class="content" style="display: inline-block;">${e}</p>
-    <button class="delimg"><i class="fa-solid fa-trash"></i></button>
+    <button class="delimg">X</button>
     </div>`)
 }
 /**
@@ -55,6 +55,9 @@ document.querySelectorAll('.checkA')[0].addEventListener('click', function (e) {
 /**
  * 개별버튼 클릭시 삭제
  */
-// document.querySelector('.delimg').addEventListener('click', function (e) {
-//     e.target.parentNode
-// })
+document.querySelector('.addList').addEventListener('click', function (e) {
+    // e.target.parentElement.remove();
+    console.log(e.target.parentElement)
+    // 다른방식 : 버튼 누르면 e.target의 value와 불러온 LS의 value를 비교하여 같은걸 빼고 다시 저장.
+    // (=e.target의 value와 불러온 LS에서 e.target value를 뺀다)
+})
