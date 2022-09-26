@@ -11,7 +11,7 @@ body {
     width: 50%;
     display: inline-block;
     position: relative;
-    top: 300px;
+    top: 200px;
     margin: auto;
     background-color: white;
     border-radius: 15px;
@@ -44,16 +44,15 @@ body {
     border-bottom: 2px solid black;
 }
 
-.img {
+.delimg {
     width: 30px;
     height: 30px;
     border: 1px solid black;
     border-radius: 15px;
     background-color: beige;
-    /* transition: all 0.5s; */
 }
 
-.img:hover {
+.delimg:hover {
     width: 30px;
     height: 30px;
     border: 1px solid beige;
@@ -109,6 +108,7 @@ body {
         width: 30%;
         margin-top: 13px;
     }
+
     .del:hover {
         width: 30%;
         height: 30px;
