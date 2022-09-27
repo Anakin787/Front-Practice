@@ -31,7 +31,7 @@ function 리스트(e) {
     </div>`)
 }
 /**
- * 'List'를 선택하면 [checkA]의 상태에 따라 아래의 리스트 전체가 선택되고 해제되는 코드 & 전체 체크시 처리완료상태(가로줄)
+ * 'List'를 선택하면 [checkA]의 상태에 따라 아래의 리스트 전체가 선택되고 해제되는 코드 & 전체 체크시 임시 완료처리(가로줄)
  * (추후) 개별 체크박스[checkL] 중 하나라도 체크 해제가되면 [checkA]해제되는 기능
  */
 document.querySelectorAll('.checkA')[0].addEventListener('click', function (e) {
@@ -63,15 +63,16 @@ document.querySelector('.delall').addEventListener('click', function (e) {
     localStorage.setItem('listR', JSON.stringify(temp));
 })
 
-// 체크한 리스트의 완료처리(가로줄)
+// 체크한 리스트의 임시 완료처리(가로줄)
 var checkL = document.querySelectorAll('.check')
+var cont=document.querySelectorAll('.content')
 for (let i = 0; i < checkL.length; i++) {
     checkL[i].addEventListener('click', function () {
         if (checkL[i].checked == false) {
-            document.querySelectorAll('.content')[i].style.textDecoration = "none"
+            cont[i].style.textDecoration = 'none'
         }
         else {
-            document.querySelectorAll('.content')[i].style.textDecoration = "line-through"
+            cont[i].style.textDecoration="line-through"
         }
     })
 }
